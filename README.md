@@ -1,5 +1,8 @@
 # ember-a-frame
 
+[![npm version](https://badge.fury.io/js/ember-a-frame.svg)](https://badge.fury.io/js/ember-a-frame)
+[![Build Status](https://travis-ci.org/kellyselden/ember-a-frame.svg?branch=master)](https://travis-ci.org/kellyselden/ember-a-frame)
+
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation

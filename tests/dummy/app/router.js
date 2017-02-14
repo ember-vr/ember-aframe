@@ -7,6 +7,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('hello-world');
+  this.route('360-image-gallery', function() {
+    this.route('city');
+    this.route('cubes');
+    this.route('sechelt');
+  });
 });
 
 export default Router;
