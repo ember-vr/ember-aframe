@@ -1,0 +1,1 @@
+export { default } from 'ember-a-frame/components/a-plane';

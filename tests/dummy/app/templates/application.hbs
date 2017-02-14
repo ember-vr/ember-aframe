@@ -1,5 +1,28 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<a-scene>
+  {{outlet}}
 
-{{outlet}}
+  <a-entity layout="layout: line; margin: 1.5" position="-3 0 -4">
+    {{#if shouldShowBackButton}}
+      {{a-back-button class="link" text="Home"
+        click=(transition-to "index")
+      }}
+    {{else}}
+      {{a-back-button class="link" text="Hello World"
+        click=(transition-to "hello-world")
+      }}
+      {{a-back-button class="link" text="360 Image Gallery"
+        click=(transition-to "360-image-gallery")
+      }}
+    {{/if}}
+  </a-entity>
+
+  <!-- Camera + Cursor. -->
+  <a-entity camera look-controls rotation="{{rotX}} {{rotY}} 0">
+    <a-cursor id="cursor"
+      animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+      animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+      event-set__1="_event: mouseenter; color: springgreen"
+      event-set__2="_event: mouseleave; color: black"
+      raycaster="objects: .link"></a-cursor>
+  </a-entity>
+</a-scene>
