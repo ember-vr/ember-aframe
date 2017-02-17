@@ -3,15 +3,16 @@
   "version": "0.0.0",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
+    "a-frame",
     "ember-addon"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Kelly Selden",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/kellyselden/ember-a-frame.git",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
@@ -55,6 +56,7 @@
     "node": ">= 0.12.0"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "https://kellyselden.github.io/ember-a-frame"
   }
 }
