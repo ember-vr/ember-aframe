@@ -1,19 +1,16 @@
 <a-scene>
   {{outlet}}
 
-  <a-entity layout="layout: line; margin: 1.5" position="-3 0 -4">
-    {{#if shouldShowBackButton}}
-      {{a-back-button class="link" text="Home"
-        click=(transition-to "index")
-      }}
-    {{else}}
-      {{a-back-button class="link" text="Hello World"
-        click=(transition-to "hello-world")
-      }}
-      {{a-back-button class="link" text="360 Image Gallery"
-        click=(transition-to "360-image-gallery")
-      }}
-    {{/if}}
+  <a-entity layout="layout: line; margin: 1.5" position="-1.5 -1.5 -4">
+    {{a-back-button class="link" text="Home"
+      click=(transition-to "index")
+    }}
+    {{a-back-button class="link" text="Hello World"
+      click=(transition-to "hello-world")
+    }}
+    {{a-back-button class="link" text="360 Image Gallery"
+      click=(transition-to "360-image-gallery")
+    }}
   </a-entity>
 
   <!-- Camera + Cursor. -->

@@ -25,6 +25,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
+    "ember-animejs": "0.0.2",
     "ember-awesome-macros": "0.31.2",
     "ember-cli": "2.11.1",
     "ember-cli-app-version": "^2.0.0",

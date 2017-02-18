@@ -11,5 +11,5 @@ export default Ember.Controller.extend({
   rotX: 0,
   rotY: 0,
 
-  shouldShowBackButton: neq('currentRouteName', raw('index'))
+  // shouldShowBackButton: neq('currentRouteName', raw('index'))
 });
