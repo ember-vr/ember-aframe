@@ -1,9 +1,6 @@
-import Ember from 'ember';
-import layout from '../templates/components/a-sky';
+import AEntity from './a-entity';
 
-export default Ember.Component.extend({
-  layout,
-
+export default AEntity.extend({
   tagName: 'a-sky',
   attributeBindings: [
     'color',

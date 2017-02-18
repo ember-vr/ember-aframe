@@ -1,13 +1,8 @@
-import Ember from 'ember';
-import layout from '../templates/components/a-box';
+import AEntity from './a-entity';
 
-export default Ember.Component.extend({
-  layout,
-
+export default AEntity.extend({
   tagName: 'a-box',
   attributeBindings: [
-    'position',
-    'rotation',
     'color'
   ]
 });

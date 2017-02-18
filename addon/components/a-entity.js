@@ -1,15 +1,16 @@
 import Ember from 'ember';
-import layout from '../templates/components/a-entity';
+
+const conflicts = ['layout', 'text'];
+const attributeBindings = Object.keys(AFRAME.components).filter(c => !conflicts.includes(c));
 
 export default Ember.Component.extend({
-  layout,
-
   tagName: 'a-entity',
-  attributeBindings: [
-    'geometry',
-    'material',
-    'position',
-    'sound',
-    'visible'
-  ]
+  // attributeBindings: [
+  //   'geometry',
+  //   'material',
+  //   'position',
+  //   'sound',
+  //   'visible'
+  // ]
+  attributeBindings
 });

@@ -1,12 +1,8 @@
-import Ember from 'ember';
-import layout from '../templates/components/a-sphere';
+import AEntity from './a-entity';
 
-export default Ember.Component.extend({
-  layout,
-
+export default AEntity.extend({
   tagName: 'a-sphere',
   attributeBindings: [
-    'position',
     'radius',
     'color'
   ]
