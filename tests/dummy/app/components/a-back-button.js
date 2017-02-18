@@ -4,12 +4,14 @@ import anime from 'ember-animejs';
 import computed from 'ember-macro-helpers/computed';
 import toAStr from 'ember-a-frame/utils/to-a-str';
 import AAttributeObserver from 'ember-a-frame/mixins/a-attribute-observer';
+import raw from 'ember-macro-helpers/raw';
+import { conditional } from 'ember-awesome-macros';
 
 const WAIT_HERE_FOREVER = Ember.RSVP.defer().promise;
 
 const serializeAttribute = AFRAME.components.position.schema.stringify;
 
-export default AEntity.extend(AAttributeObserver, {
+export default AEntity.extend({
   attributeBindings: [
     // 'animation__hover'
   ],
@@ -21,7 +23,7 @@ export default AEntity.extend(AAttributeObserver, {
   },
 
   geometry: 'primitive: plane; height: 1; width: 1',
-  material: 'shader: flat',
+  material: conditional('shouldHide', raw('opacity: 0'), raw('shader: flat')),
 
   // animation__hover: computed('position', position => {
   //   if (!position) {

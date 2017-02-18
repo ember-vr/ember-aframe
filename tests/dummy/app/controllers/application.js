@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import raw from 'ember-macro-helpers/raw';
-import { neq } from 'ember-awesome-macros';
+import { eq } from 'ember-awesome-macros';
 
 export default Ember.Controller.extend({
   queryParams: [
@@ -11,5 +11,5 @@ export default Ember.Controller.extend({
   rotX: 0,
   rotY: 0,
 
-  // shouldShowBackButton: neq('currentRouteName', raw('index'))
+  shouldHideBackButton: eq('currentRouteName', raw('index'))
 });
