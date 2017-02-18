@@ -9,6 +9,7 @@ export default Ember.Component.extend({
     'geometry',
     'material',
     'position',
-    'sound'
+    'sound',
+    'visible'
   ]
 });

@@ -5,7 +5,8 @@ import computed from 'ember-macro-helpers/computed';
 import toAStr from 'ember-a-frame/utils/to-a-str';
 import AAttributeObserver from 'ember-a-frame/mixins/a-attribute-observer';
 import raw from 'ember-macro-helpers/raw';
-import { conditional } from 'ember-awesome-macros';
+import { not } from 'ember-awesome-macros';
+import { toString } from 'ember-awesome-macros';
 
 const WAIT_HERE_FOREVER = Ember.RSVP.defer().promise;
 
@@ -23,7 +24,8 @@ export default AEntity.extend({
   },
 
   geometry: 'primitive: plane; height: 1; width: 1',
-  material: conditional('shouldHide', raw('opacity: 0'), raw('shader: flat')),
+  material: 'shader: flat',
+  visible: toString(not('shouldHide')),
 
   // animation__hover: computed('position', position => {
   //   if (!position) {
