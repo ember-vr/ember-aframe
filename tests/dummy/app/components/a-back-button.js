@@ -41,33 +41,32 @@ export default AEntity.extend({
   // }),
 
   hover: task(function * (position) {
-    let animation;
     let self = this;
     position.y -= .25;
     let oldPosition = serializeAttribute(position);
     position.y += .5;
     let newPosition = serializeAttribute(position);
 
-    try {
-      animation = anime({
-        // targets: this.element,
-        // position: [
-        //   oldPosition,
-        //   newPosition
-        // ],
-        targets: { position: oldPosition },
-        position: newPosition,
-        duration: 500,
-        direction: 'alternate',
-        easing: 'easeInOutSine',
-        update() {
-          Ember.run(() => {
-            self.set('position', this.targets.position);
-          });
-        },
-        loop: true
-      });
+    let animation = anime({
+      // targets: this.element,
+      // position: [
+      //   oldPosition,
+      //   newPosition
+      // ],
+      targets: { position: oldPosition },
+      position: newPosition,
+      duration: 500,
+      direction: 'alternate',
+      easing: 'easeInOutSine',
+      update() {
+        Ember.run(() => {
+          self.set('position', this.targets.position);
+        });
+      },
+      loop: true
+    });
 
+    try {
       yield WAIT_HERE_FOREVER;
     } finally {
       animation.pause();
