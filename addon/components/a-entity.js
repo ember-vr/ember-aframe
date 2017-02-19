@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const conflicts = ['layout', 'text'];
+const conflicts = ['layout'];
 const attributeBindings = Object.keys(AFRAME.components).filter(c => !conflicts.includes(c));
 
 export default Ember.Component.extend({

@@ -5,8 +5,7 @@ import computed from 'ember-macro-helpers/computed';
 import toAStr from 'ember-a-frame/utils/to-a-str';
 import AAttributeObserver from 'ember-a-frame/mixins/a-attribute-observer';
 import raw from 'ember-macro-helpers/raw';
-import { not } from 'ember-awesome-macros';
-import { toString } from 'ember-awesome-macros';
+import { not, tag, toString } from 'ember-awesome-macros';
 
 const WAIT_HERE_FOREVER = Ember.RSVP.defer().promise;
 
@@ -14,7 +13,8 @@ const serializeAttribute = AFRAME.components.position.schema.stringify;
 
 export default AEntity.extend({
   attributeBindings: [
-    // 'animation__hover'
+    // 'animation__hover',
+    'a-text:text'
   ],
 
   attributesToObserve: {
@@ -26,6 +26,7 @@ export default AEntity.extend({
   geometry: 'primitive: plane; height: 1; width: 1',
   material: 'shader: flat',
   visible: toString(not('shouldHide')),
+  'a-text': tag`value: ${'text'}; width: 4; color: black; align: center`,
 
   // animation__hover: computed('position', position => {
   //   if (!position) {
