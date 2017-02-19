@@ -2,7 +2,7 @@ import Ember from 'ember';
 import raw from 'ember-macro-helpers/raw';
 import { eq } from 'ember-awesome-macros';
 
-const linksY = 4.5;
+const linksY = 3;
 const hoverRange = 0.25;
 const linksHoverTop = linksY + hoverRange;
 const linksHoverBottom = linksY - hoverRange;
