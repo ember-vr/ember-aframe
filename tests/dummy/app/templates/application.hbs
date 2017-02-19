@@ -1,7 +1,7 @@
 <a-scene>
   {{outlet}}
 
-  <a-entity layout="layout: line; margin: 1.5" position="-1.5 {{linksHoverTop}} -4"
+  <a-entity layout="type: line; margin: 1.5" position="-1.5 {{linksHoverTop}} -4"
     animation__hover="property: position; dir: alternate; loop: true; easing: easeInOutSine; to: -1.5 {{linksHoverBottom}} -4">
     {{a-back-button class="link" text="Home"
       shouldHide=shouldHideBackButton
