@@ -1,8 +1,8 @@
 <a-scene>
   {{outlet}}
 
-  <a-entity layout="layout: line; margin: 1.5" position="-1.5 -1.5 -4"
-    animation__hover="property: position; dir: alternate; loop: true; easing: easeInOutSine; from: -1.5 -1.25 -4; to: -1.5 -1.75 -4">
+  <a-entity layout="layout: line; margin: 1.5" position="-1.5 3.25 -4"
+    animation__hover="property: position; dir: alternate; loop: true; easing: easeInOutSine; to: -1.5 2.75 -4">
     {{a-back-button class="link" text="Home"
       shouldHide=shouldHideBackButton
       click=(transition-to "index")
@@ -16,12 +16,12 @@
   </a-entity>
 
   <!-- Camera + Cursor. -->
-  <a-entity camera look-controls rotation="{{rotX}} {{rotY}} 0">
+  <a-camera rotation="{{rotX}} {{rotY}} 0">
     <a-cursor id="cursor"
       animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
       animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
       event-set__1="_event: mouseenter; color: springgreen"
       event-set__2="_event: mouseleave; color: black"
       raycaster="objects: .link"></a-cursor>
-  </a-entity>
+  </a-camera>
 </a-scene>
