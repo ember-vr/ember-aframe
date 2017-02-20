@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  people: Ember.inject.service(),
+
   queryParams: {
     rotX: {
       replace: true
@@ -16,6 +18,12 @@ export default Ember.Route.extend({
     },
     posZ: {
       replace: true
+    }
+  },
+
+  actions: {
+    didTransition() {
+      // this.get('people').updateRoute(this.controller.get('currentRouteName'));
     }
   }
 });

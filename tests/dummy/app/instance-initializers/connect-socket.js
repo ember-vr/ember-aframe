@@ -17,6 +17,7 @@ export function initialize(appInstance) {
     websocket.send(JSON.stringify({
       type: 'connected'
     }));
+    people.updateRoute();
   }
 
   function onClose(evt)
@@ -29,17 +30,23 @@ export function initialize(appInstance) {
     // websocket.close();
     let id = evt.data.substr(0, 36);
     let data = JSON.parse(evt.data.substr(37));
+    let otherPeople = people.get('otherPeople');
     switch (data.type) {
       case 'id':
-        people.get('otherPeople').pushObject(Ember.Object.create({
+        otherPeople.pushObject(Ember.Object.create({
           id
         }));
+        // everyone tells the new person their route
+        people.updateRoute();
         break;
       case 'move':
-        people.get('otherPeople').findBy('id', id).set('params', data.data);
+        otherPeople.findBy('id', id).set('params', data.data);
+        break;
+      case 'route':
+        otherPeople.findBy('id', id).set('route', data.data);
         break;
       case 'left':
-        people.get('otherPeople').removeObject(people.get('otherPeople').findBy('id', id));
+        otherPeople.removeObject(people.get('otherPeople').findBy('id', id));
         break;
     }
   }

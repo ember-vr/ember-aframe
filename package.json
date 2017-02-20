@@ -51,6 +51,7 @@
     "ember-resolver": "^2.0.3",
     "ember-source": "~2.11.0",
     "ember-transition-helper": "0.0.6",
+    "ember-truth-helpers": "1.3.0",
     "loader.js": "^4.0.10"
   },
   "engines": {

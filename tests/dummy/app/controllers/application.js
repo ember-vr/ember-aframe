@@ -34,6 +34,10 @@ export default Ember.Controller.extend({
 
   otherPeople: Ember.computed.readOnly('people.otherPeople'),
 
+  updateRoute: Ember.observer('currentRouteName', function() {
+    this.get('people').updateRoute(this.get('currentRouteName'));
+  }),
+
   actions: {
     updateQueryParams(params) {
       this.setProperties(params);
