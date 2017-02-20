@@ -15,6 +15,16 @@
     }}
   </a-entity>
 
+  {{#each otherPeople as |person|}}
+    {{#with person.params as |params|}}
+      <a-box
+        rotation="{{params.rotX}} {{params.rotY}} 0"
+        position="{{params.posX}} {{params.posY}} {{params.posZ}}"
+      >
+      </a-box>
+    {{/with}}
+  {{/each}}
+
   {{my-camera rotX=rotX rotY=rotY posX=posX posY=posY posZ=posZ
     cameraMove=(action "updateQueryParams")}}
 </a-scene>

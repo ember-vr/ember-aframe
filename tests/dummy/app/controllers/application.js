@@ -11,6 +11,8 @@ const linksHoverBottom = linksY - hoverRange;
 const DEFAULT_CAMERA_HEIGHT = 1.6;
 
 export default Ember.Controller.extend({
+  people: Ember.inject.service(),
+
   queryParams: [
     'rotX',
     'rotY',
@@ -30,9 +32,13 @@ export default Ember.Controller.extend({
 
   shouldHideBackButton: eq('currentRouteName', raw('index')),
 
+  otherPeople: Ember.computed.readOnly('people.otherPeople'),
+
   actions: {
     updateQueryParams(params) {
       this.setProperties(params);
+
+      this.get('people').updateLocation(params);
     }
   }
 });
