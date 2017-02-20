@@ -14,9 +14,9 @@ export function initialize(appInstance) {
 
   function onOpen(evt)
   {
-    websocket.send(JSON.stringify({
-      type: 'connected'
-    }));
+    // websocket.send(JSON.stringify({
+    //   type: 'connected'
+    // }));
     people.updateRoute();
   }
 
@@ -28,25 +28,50 @@ export function initialize(appInstance) {
   function onMessage(evt)
   {
     // websocket.close();
-    let id = evt.data.substr(0, 36);
-    let data = JSON.parse(evt.data.substr(37));
+    let data = JSON.parse(evt.data);
+    let id = data.id;
     let otherPeople = people.get('otherPeople');
+    let person = otherPeople.findBy('id', id);
     switch (data.type) {
-      case 'id':
-        otherPeople.pushObject(Ember.Object.create({
-          id
-        }));
-        // everyone tells the new person their route
-        people.updateRoute();
-        break;
+      // case 'id':
+      //   otherPeople.pushObject(Ember.Object.create({
+      //     id
+      //   }));
+      //   // everyone tells the new person their route
+      //   people.updateRoute();
+      //   break;
       case 'move':
-        otherPeople.findBy('id', id).set('params', data.data);
+        // if (person) {
+          person.set('params', data.data);
+        // }
         break;
-      case 'route':
-        otherPeople.findBy('id', id).set('route', data.data);
+      // case 'route':
+      //   if (data.data !== people.get('myRoute')) {
+      //     // you clear out others when you switch routes for instant effect
+      //     // then the propagation hits later so ignore it
+      //     // if (person) {
+      //       // another person switched routes
+      //       otherPeople.removeObject(person);
+      //     // }
+      //   } else {
+      //     // if (!person) {
+      //       otherPeople.pushObject(Ember.Object.create({
+      //         id
+      //       }));
+      //     // }
+      //   }
+      //   break;
+      case 'join':
+        // if (!person) {
+          otherPeople.pushObject(Ember.Object.create({
+            id
+          }));
+        // }
         break;
       case 'left':
-        otherPeople.removeObject(people.get('otherPeople').findBy('id', id));
+        // if (person) {
+          otherPeople.removeObject(person);
+        // }
         break;
     }
   }

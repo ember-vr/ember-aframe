@@ -16,15 +16,13 @@
   </a-entity>
 
   {{#each otherPeople as |person|}}
-    {{#if (eq person.route currentRouteName)}}
-      {{#with person.params as |p|}}
-          <a-box
-            rotation="{{p.rotX}} {{p.rotY}} 0"
-            position="{{p.posX}} {{p.posY}} {{p.posZ}}"
-          >
-          </a-box>
-      {{/with}}
-    {{/if}}
+    {{#with person.params as |p|}}
+      <a-box
+        rotation="{{p.rotX}} {{p.rotY}} 0"
+        position="{{p.posX}} {{p.posY}} {{p.posZ}}"
+      >
+      </a-box>
+    {{/with}}
   {{/each}}
 
   {{my-camera rotX=rotX rotY=rotY posX=posX posY=posY posZ=posZ
