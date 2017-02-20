@@ -1,5 +1,5 @@
 import ASky from 'ember-a-frame/components/a-sky';
-import toAStr from 'ember-a-frame/macros/to-a-str';
+import stringify from 'ember-a-frame/macros/stringify';
 import raw from 'ember-macro-helpers/raw';
 import { task, timeout } from 'ember-concurrency';
 import InboundActions from 'ember-component-inbound-actions/inbound-actions';
@@ -9,7 +9,7 @@ export default ASky.extend(InboundActions, {
     'animation__fade'
   ],
 
-  animation__fade: toAStr({
+  animation__fade: stringify({
     property: raw('material.color'),
     startEvents: raw('set-image-fade'),
     dir: raw('alternate'),

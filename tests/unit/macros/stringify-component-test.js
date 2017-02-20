@@ -1,14 +1,14 @@
-import toAStr from 'dummy/macros/to-a-str';
+import stringifyComponent from 'dummy/macros/stringify-component';
 import compute from 'ember-macro-test-helpers/compute';
 import { module, test } from 'qunit';
 
-module('Unit | Macro | to a str');
+module('Unit | Macro | stringify component');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
   compute({
     assert,
-    computed: toAStr('key1', 'key2'),
+    computed: stringifyComponent('key1', 'key2'),
     properties: {
       key1: 1,
       key2: 2

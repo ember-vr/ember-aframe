@@ -2,7 +2,7 @@ import AEntity from 'ember-a-frame/components/a-entity';
 import { task } from 'ember-concurrency';
 import anime from 'ember-animejs';
 import computed from 'ember-macro-helpers/computed';
-import toAStr from 'ember-a-frame/utils/to-a-str';
+import stringify from 'ember-a-frame/utils/stringify';
 import AAttributeObserver from 'ember-a-frame/mixins/a-attribute-observer';
 import raw from 'ember-macro-helpers/raw';
 import { not, tag, toString } from 'ember-awesome-macros';
@@ -34,7 +34,7 @@ export default AEntity.extend({
   //   }
 
   //   position = position.split(' ');
-  //   return toAStr({
+  //   return stringify({
   //     property: 'position',
   //     dir: 'alternate',
   //     loop: true,

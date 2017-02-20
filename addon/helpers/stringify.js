@@ -1,6 +1,6 @@
 import { helper } from 'ember-helper';
-import toAStr from 'ember-a-frame/utils/to-a-str';
+import stringify from 'ember-a-frame/utils/stringify';
 
 export default helper((params, hash) => {
-  return toAStr(hash);
+  return stringify(hash);
 });

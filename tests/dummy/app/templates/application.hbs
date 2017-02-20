@@ -1,4 +1,9 @@
 <a-scene>
+  <a-assets>
+    <a-asset-item id="headObj" src="tex.obj"></a-asset-item>
+    <a-asset-item id="headMtl" src="tex.mtl"></a-asset-item>
+  </a-assets>
+
   {{outlet}}
 
   <a-entity layout="type: line; margin: 1.5" position="-1.5 {{linksHoverTop}} -4"
@@ -16,13 +21,11 @@
   </a-entity>
 
   {{#each otherPeople as |person|}}
-    {{#with person.params as |p|}}
-      <a-box
-        rotation="{{p.rotX}} {{p.rotY}} 0"
-        position="{{p.posX}} {{p.posY}} {{p.posZ}}"
-      >
-      </a-box>
-    {{/with}}
+    {{other-person
+      obj="#headObj"
+      mtl="#headMtl"
+      params=person.params
+    }}
   {{/each}}
 
   {{my-camera rotX=rotX rotY=rotY posX=posX posY=posY posZ=posZ
