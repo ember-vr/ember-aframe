@@ -18,7 +18,7 @@ export default Ember.Component.extend({
   _setUpEvents: task(function * () {
     let trigger;
     try {
-      return new Ember.RSVP.Promise(resolve => {
+      return yield new Ember.RSVP.Promise(resolve => {
         trigger = () => {
           resolve();
           this.trigger('loaded');
