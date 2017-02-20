@@ -2,6 +2,7 @@ import ACamera from 'ember-a-frame/components/a-camera';
 import { tag, sum } from 'ember-awesome-macros';
 import { task, timeout } from 'ember-concurrency';
 // import computed from 'ember-macro-helpers/computed';
+import stringifyCoordinates from 'ember-a-frame/utils/stringify-coordinates';
 
 export default ACamera.extend({
   rotation: tag`${'rotX'} ${'rotY'} 0`,
@@ -11,7 +12,7 @@ export default ACamera.extend({
   posYOffset: 0,
 
   stringify() {
-    return AFRAME.components.position.schema.stringify(this.element.getAttribute('position')).trim();
+    return stringifyCoordinates(this.element.getAttribute('position')).trim();
   },
 
   onLoaded: Ember.on('loaded', function() {
