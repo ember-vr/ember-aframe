@@ -19,8 +19,8 @@ export default ACamera.extend({
     this.set('initialPosYOffset', this.element.getAttribute('position').y);
   }),
 
-  cameraMoveTask: task(function * () {
-    yield timeout(1000);
+  cameraMoveFastTask: task(function * () {
+    yield timeout(10);
 
     let camera = this.element;
     let { x: rotX, y: rotY } = camera.getAttribute('rotation');
@@ -29,14 +29,24 @@ export default ACamera.extend({
       this.set('posYOffset', this.get('initialPosYOffset'));
     }
     posY -= this.get('initialPosYOffset');
-    this.sendAction('cameraMove', {
+    let params = {
       rotX,
       rotY,
       posX,
       posY,
       posZ
-    });
+    };
+    this.set('params', params);
+    this.sendAction('cameraMoveFast', params);
 
-    this.get('cameraMoveTask').perform();
+    this.get('cameraMoveFastTask').perform();
+  }).on('loaded'),
+
+  cameraMoveSlowTask: task(function * () {
+    yield timeout(1000);
+
+    this.sendAction('cameraMoveSlow', this.get('params'));
+
+    this.get('cameraMoveSlowTask').perform();
   }).on('loaded')
 });

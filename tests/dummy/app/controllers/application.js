@@ -37,7 +37,8 @@ export default Ember.Controller.extend({
   actions: {
     updateQueryParams(params) {
       this.setProperties(params);
-
+    },
+    sendData(params) {
       this.get('people').updateLocation(params);
     }
   }
