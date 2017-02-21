@@ -5,12 +5,10 @@ export default Ember.Service.extend(Ember.Evented, {
   otherPeople: Ember.A(),
 
   updateLocation(params) {
-    if (this.get('ws').readyState === WebSocket.OPEN) {
-      this.get('ws').send(JSON.stringify({
-        type: 'move',
-        data: params
-      }));
-    }
+    this.send({
+      type: 'move',
+      data: params
+    });
   },
   updateRoute(route) {
     if (route) {
@@ -23,11 +21,16 @@ export default Ember.Service.extend(Ember.Evented, {
         return;
       }
     }
-    if (this.get('ws').readyState === WebSocket.OPEN) {
-      this.get('ws').send(JSON.stringify({
-        type: 'route',
-        data: route
-      }));
+    this.send({
+      type: 'route',
+      data: route
+    });
+  },
+
+  send(json) {
+    let ws = this.get('ws');
+    if (ws.readyState === WebSocket.OPEN) {
+      ws.send(JSON.stringify(json));
     }
   },
 
