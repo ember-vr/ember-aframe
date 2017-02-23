@@ -1,1 +1,3 @@
-export default AFRAME.utils.coordinates.stringify;
+import AFrame from 'aframe';
+
+export default AFrame.utils.coordinates.stringify;

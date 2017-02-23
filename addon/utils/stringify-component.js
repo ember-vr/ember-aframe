@@ -1,3 +1,5 @@
+import AFrame from 'aframe';
+
 export default function stringifyComponent(component, hash) {
-  return AFRAME.components[component].stringify(hash);
+  return AFrame.components[component].stringify(hash);
 }
