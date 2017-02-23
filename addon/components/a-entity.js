@@ -1,8 +1,9 @@
 import Ember from 'ember';
+import AFrame from 'aframe';
 import { task } from 'ember-concurrency';
 
 const conflicts = ['layout'];
-const attributeBindings = Object.keys(AFRAME.components).filter(c => !conflicts.includes(c));
+const attributeBindings = Object.keys(AFrame.components).filter(c => !conflicts.includes(c));
 
 export default Ember.Component.extend({
   tagName: 'a-entity',

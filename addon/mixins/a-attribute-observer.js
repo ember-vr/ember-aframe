@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import AFrame from 'aframe';
 import { task, timeout } from 'ember-concurrency';
 
 export default Ember.Mixin.create({
@@ -47,8 +48,8 @@ export default Ember.Mixin.create({
           this[attribute] = obj.serializeAttribute.call(this, value);
           // this[attribute] = value;
           this.notifyPropertyChange(attribute);
-        } else if (AFRAME.components[attribute]) {
-          this[attribute] = AFRAME.components[attribute].schema.stringify(value);
+        } else if (AFrame.components[attribute]) {
+          this[attribute] = AFrame.components[attribute].schema.stringify(value);
           this.notifyPropertyChange(attribute);
         }
         triggeredList.push(attribute);

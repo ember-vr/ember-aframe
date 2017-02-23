@@ -1,3 +1,4 @@
+import AFrame from 'aframe';
 import AEntity from 'ember-a-frame/components/a-entity';
 import { task } from 'ember-concurrency';
 import anime from 'ember-animejs';
@@ -9,7 +10,7 @@ import { not, tag, toString } from 'ember-awesome-macros';
 
 const WAIT_HERE_FOREVER = Ember.RSVP.defer().promise;
 
-const serializeAttribute = AFRAME.components.position.schema.stringify;
+const serializeAttribute = AFrame.components.position.schema.stringify;
 
 export default AEntity.extend({
   attributeBindings: [
