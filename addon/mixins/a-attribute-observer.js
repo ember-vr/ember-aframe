@@ -1,8 +1,8 @@
-import Ember from 'ember';
+import Mixin from 'ember-metal/mixin';
 import AFrame from 'aframe';
 import { task, timeout } from 'ember-concurrency';
 
-export default Ember.Mixin.create({
+export default Mixin.create({
   // _checkAttributes: task(function * () {
   //   let attributes = this.get('attributesToObserve');
   //   let observer;

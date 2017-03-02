@@ -46,9 +46,9 @@ export default AEntity.extend({
 
   hover: task(function * (position) {
     let self = this;
-    position.y -= .25;
+    position.y -= 0.25;
     let oldPosition = serializeAttribute(position);
-    position.y += .5;
+    position.y += 0.5;
     let newPosition = serializeAttribute(position);
 
     let animation = anime({
