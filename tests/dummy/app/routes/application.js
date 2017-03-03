@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import Route from 'ember-route';
+import injectService from 'ember-service/inject';
 
-export default Ember.Route.extend({
-  people: Ember.inject.service(),
+export default Route.extend({
+  people: injectService(),
 
   queryParams: {
     rotX: {

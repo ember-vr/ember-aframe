@@ -1,7 +1,5 @@
-import Ember from 'ember';
+import Base from './-base';
 
-export default Ember.Route.extend({
-  beforeModel(transition) {
-    transition.send('updateSrc', '#sechelt');
-  }
+export default Base.extend({
+  updateSrc: '#sechelt'
 });

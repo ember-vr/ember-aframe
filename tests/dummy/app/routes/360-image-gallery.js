@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import Route from 'ember-route';
+import { scheduleOnce } from 'ember-runloop';
 
-export default Ember.Route.extend({
+export default Route.extend({
   actions: {
     updateSrc(src) {
-      Ember.run.scheduleOnce('afterRender', () => {
+      scheduleOnce('afterRender', () => {
         this.controller.set('skySrc', src);
       });
     }

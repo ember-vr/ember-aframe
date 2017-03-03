@@ -6,18 +6,35 @@
 
   {{outlet}}
 
-  <a-entity layout="type: line; margin: 1.5" position="-1.5 {{linksHoverTop}} -4"
-    animation__hover="property: position; dir: alternate; loop: true; easing: easeInOutSine; to: -1.5 {{linksHoverBottom}} -4">
-    {{a-back-button class="link" text="Home"
-      shouldHide=shouldHideBackButton
-      click=(transition-to "index")
-    }}
-    {{a-back-button class="link" text="Hello World"
-      click=(transition-to "hello-world")
-    }}
-    {{a-back-button class="link" text="360 Image Gallery"
-      click=(transition-to "360-image-gallery")
-    }}
+  <a-entity position="-1.5 3 -4">
+    <a-entity
+      layout="
+        type: line;
+        margin: 1.5
+      "
+      position="0 .25 0"
+      animation__hover="
+        property: position;
+        dir: alternate;
+        loop: true;
+        easing: easeInOutSine;
+        to: 0 -.25 0
+      "
+    >
+      {{a-back-button
+        "Home"
+        shouldHide=shouldHideBackButton
+        click=(transition-to "index")
+      }}
+      {{a-back-button
+        "Hello World"
+        click=(transition-to "hello-world")
+      }}
+      {{a-back-button
+        "360 Image Gallery"
+        click=(transition-to "360-image-gallery")
+      }}
+    </a-entity>
   </a-entity>
 
   {{#each otherPeople as |person|}}
@@ -28,7 +45,13 @@
     }}
   {{/each}}
 
-  {{my-camera rotX=rotX rotY=rotY posX=posX posY=posY posZ=posZ
+  {{my-camera
+    rotX=rotX
+    rotY=rotY
+    posX=posX
+    posY=posY
+    posZ=posZ
     cameraMoveSlow=(action "updateQueryParams")
-    cameraMoveFast=(action "sendData")}}
+    cameraMoveFast=(action "sendData")
+  }}
 </a-scene>

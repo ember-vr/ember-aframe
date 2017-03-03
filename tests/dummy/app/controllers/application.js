@@ -1,17 +1,16 @@
-import Ember from 'ember';
+import Controller from 'ember-controller';
+import injectService from 'ember-service/inject';
+import { readOnly } from 'ember-computed';
+import observer from 'ember-metal/observer';
 import raw from 'ember-macro-helpers/raw';
 import { eq } from 'ember-awesome-macros';
 
-const linksY = 3;
-const hoverRange = 0.25;
-const linksHoverTop = linksY + hoverRange;
-const linksHoverBottom = linksY - hoverRange;
-
 // from https://github.com/aframevr/aframe/blob/master/src/constants/index.js#L3
-const DEFAULT_CAMERA_HEIGHT = 1.6;
+// https://github.com/aframevr/aframe/pull/2418
+// const DEFAULT_CAMERA_HEIGHT = 1.6;
 
-export default Ember.Controller.extend({
-  people: Ember.inject.service(),
+export default Controller.extend({
+  people: injectService(),
 
   queryParams: [
     'rotX',
@@ -27,14 +26,11 @@ export default Ember.Controller.extend({
   posY: 0,
   posZ: 0,
 
-  linksHoverTop,
-  linksHoverBottom,
-
   shouldHideBackButton: eq('currentRouteName', raw('index')),
 
-  otherPeople: Ember.computed.readOnly('people.otherPeople'),
+  otherPeople: readOnly('people.otherPeople'),
 
-  updateRoute: Ember.observer('currentRouteName', function() {
+  updateRoute: observer('currentRouteName', function() {
     this.get('people').updateRoute(this.get('currentRouteName'));
   }),
 
