@@ -2,18 +2,19 @@
 import AEntity from 'ember-a-frame/components/a-entity';
 // import { task } from 'ember-concurrency';
 // import anime from 'ember-animejs';
-// import computed from 'ember-macro-helpers/computed';
-// import stringify from 'ember-a-frame/utils/stringify';
-// import parseCoordinates from 'ember-a-frame/utils/parse-coordinates';
-// import stringifyCoordinates from 'ember-a-frame/utils/stringify-coordinates';
-// import AAttributeObserver from 'ember-a-frame/mixins/a-attribute-observer';
+import on from 'ember-evented/on';
+import computed from 'ember-macro-helpers/computed';
+import parseCoordinates from 'ember-a-frame/utils/parse-coordinates';
+import stringifyCoordinates from 'ember-a-frame/utils/stringify-coordinates';
+import stringifyComponent from 'ember-a-frame/utils/stringify-component';
+import AAttributeObserver from 'ember-a-frame/mixins/a-attribute-observer';
 // import raw from 'ember-macro-helpers/raw';
 import { not, tag, toString } from 'ember-awesome-macros';
 
 // const WAIT_HERE_FOREVER = Ember.RSVP.defer().promise;
 
 const MyComponent = AEntity.extend(
-  // AAttributeObserver,
+  AAttributeObserver,
 {
   classNames: ['link'],
 
@@ -22,16 +23,34 @@ const MyComponent = AEntity.extend(
     'a-text:text'
   ],
 
-  // attributesToObserve: {
-  //   position: {
-  //     action: 'hover'
-  //   }
-  // },
+  attributesToObserve: {
+    position: {
+      // action: 'hover'
+    }
+  },
+
+  onDidInsertElement: on('didInsertElement', function() {
+    // let setAttribute = this._setAttribute = this.element.setAttribute;
+    // this.element.setAttribute = function() {
+    //   return setAttribute.apply(this, arguments);
+    // };
+  }),
+
+  onWillDestroyElement: on('willDestroyElement', function() {
+  }),
 
   geometry: 'primitive: plane; height: 1; width: 1',
   material: 'shader: flat',
   visible: toString(not('shouldHide')),
   'a-text': tag`value: ${'text'}; width: 4; color: black; align: center`,
+
+  // animation__hover: stringifyComponent('animation', {
+  //   property: 'position',
+  //   dir: 'alternate',
+  //   loop: true,
+  //   from: '0 -.5 0',
+  //   to: '0 .5 0'
+  // }),
 
   // animation__hover: computed('position', position => {
   //   if (!position) {
@@ -45,15 +64,17 @@ const MyComponent = AEntity.extend(
   //   position.y += range;
   //   let to = stringifyCoordinates(position);
 
-  //   let string = stringify({
+  //   let animation__hover = {
   //     property: 'position',
   //     dir: 'alternate',
   //     loop: true,
   //     from,
   //     to
-  //   });
+  //   };
 
-  //   return string;
+  //   animation__hover = stringifyComponent('animation', animation__hover);
+
+  //   return animation__hover;
   // }),
 
   // hover: task(function * (position) {

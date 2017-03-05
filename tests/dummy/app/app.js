@@ -7,6 +7,11 @@ import 'npm:aframe-animation-component';
 import 'npm:aframe-event-set-component';
 import 'npm:aframe-layout-component';
 
+// let setAttribute = HTMLElement.prototype.setAttribute;
+// HTMLElement.prototype.setAttribute = function() {
+//   return setAttribute.apply(this, arguments);
+// };
+
 let App;
 
 Ember.MODEL_FACTORY_INJECTIONS = true;

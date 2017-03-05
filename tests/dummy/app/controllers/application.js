@@ -2,6 +2,7 @@ import Controller from 'ember-controller';
 import injectService from 'ember-service/inject';
 import { readOnly } from 'ember-computed';
 import observer from 'ember-metal/observer';
+import get from 'ember-metal/get';
 import raw from 'ember-macro-helpers/raw';
 import { eq } from 'ember-awesome-macros';
 import ENV from '../config/environment';
@@ -36,7 +37,7 @@ export default Controller.extend({
   otherPeople: readOnly('people.otherPeople'),
 
   updateRoute: observer('currentRouteName', function() {
-    this.get('people').updateRoute(this.get('currentRouteName'));
+    get(this, 'people').updateRoute(get(this, 'currentRouteName'));
   }),
 
   actions: {
@@ -44,7 +45,7 @@ export default Controller.extend({
       this.setProperties(params);
     },
     sendData(params) {
-      this.get('people').updateLocation(params);
+      get(this, 'people').updateLocation(params);
     }
   }
 });
