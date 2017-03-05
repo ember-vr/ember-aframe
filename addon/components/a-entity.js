@@ -16,9 +16,9 @@ const attributeBindings = Object.keys(components).filter(c => !conflicts.include
 
 function playAfterChange() {
   scheduleOnce('afterRender', () => {
-    let { element } = this;
-    element.pause();
-    element.play();
+    // let { element } = this;
+    // element.pause();
+    // element.play();
   });
 }
 
