@@ -15,6 +15,7 @@ Router.map(function() {
       this.route('sechelt');
     });
   });
+  this.route('list');
 });
 
 export default Router;
