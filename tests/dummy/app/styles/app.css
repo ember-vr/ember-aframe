@@ -1,3 +1,7 @@
 .ember-application > .ember-view {
   height: 100%;
 }
+
+.pointer {
+  cursor: pointer;
+}

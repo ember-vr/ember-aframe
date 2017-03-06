@@ -4,15 +4,10 @@ import on from 'ember-evented/on';
 import { scheduleOnce } from 'ember-runloop';
 import { addObserver, removeObserver } from 'ember-metal/observer';
 import RSVP from 'rsvp';
-import AFrame from 'aframe';
 import { task } from 'ember-concurrency';
+import { defaultComponents } from '../utils/components';
 
 const { Promise } = RSVP;
-
-const { components } = AFrame;
-
-const conflicts = ['layout'];
-const attributeBindings = Object.keys(components).filter(c => !conflicts.includes(c));
 
 function playAfterChange() {
   scheduleOnce('afterRender', () => {
@@ -31,7 +26,7 @@ export default Component.extend({
   //   'sound',
   //   'visible'
   // ]
-  attributeBindings,
+  attributeBindings: defaultComponents,
 
   _setUpEvents: task(function * () {
     let trigger;
