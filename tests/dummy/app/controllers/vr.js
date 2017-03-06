@@ -1,5 +1,6 @@
 import Controller from 'ember-controller';
 import injectService from 'ember-service/inject';
+import injectController from 'ember-controller/inject';
 import { readOnly } from 'ember-computed';
 import observer from 'ember-metal/observer';
 import get from 'ember-metal/get';
@@ -15,6 +16,7 @@ const { rootURL } = ENV;
 
 export default Controller.extend({
   people: injectService(),
+  application: injectController(),
 
   queryParams: [
     'rotX',
@@ -32,7 +34,9 @@ export default Controller.extend({
 
   rootURL,
 
-  shouldHideBackButton: eq('currentRouteName', raw('index')),
+  currentRouteName: readOnly('application.currentRouteName'),
+
+  shouldHideBackButton: eq('currentRouteName', raw('vr.index')),
 
   otherPeople: readOnly('people.otherPeople'),
 

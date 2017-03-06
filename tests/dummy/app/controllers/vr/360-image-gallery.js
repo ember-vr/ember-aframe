@@ -5,7 +5,7 @@ export default Controller.extend({
 
   actions: {
     changeMaterial(src) {
-      this.transitionToRoute(`360-image-gallery.${src.substr(1)}`);
+      this.transitionToRoute(`vr.360-image-gallery.${src.substr(1)}`);
     }
   }
 });
