@@ -62,5 +62,5 @@ export default Component.extend({
 
   _onWillDestroyElement: on('willDestroyElement', function() {
     this._toggleObservers(removeObserver);
-  }),
+  })
 });
