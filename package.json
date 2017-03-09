@@ -19,9 +19,12 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "aframe": "0.5.0",
+    "aframe": "kellyselden/aframe#node-css",
+    "broccoli-file-creator": "^1.1.1",
+    "broccoli-merge-trees": "^2.0.0",
     "ember-cli-babel": "^5.1.7",
-    "ember-cli-htmlbars": "^1.1.1"
+    "ember-cli-htmlbars": "^1.1.1",
+    "jsdom": "^9.11.0"
   },
   "devDependencies": {
     "aframe-animation-component": "3.2.2",

@@ -1,1 +1,0 @@
-export { default } from 'ember-a-frame/components/a-box';

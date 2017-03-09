@@ -1,8 +1,8 @@
 import Component from 'ember-component';
-import { defaultAttributes } from 'ember-a-frame/utils/attributes';
+import { defaultComponents } from 'ember-a-frame/utils/components';
 
 export default Component.extend({
-  defaultAttributes,
+  defaultComponents,
 
   actions: {
     toggle() {

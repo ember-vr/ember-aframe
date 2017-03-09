@@ -3,11 +3,12 @@
 </div>
 
 {{default-attributes}}
+{{default-components}}
 
 <h2>
-  Registered Components
+  A-Frame primitives (Ember Components)
 </h2>
-{{#each registeredComponents as |component|}}
+{{#each components as |component|}}
   <div>
     {{#if component.nonDefaultAttributeBindings}}
       <span class="pointer" {{action "toggle" component}}>

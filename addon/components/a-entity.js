@@ -5,6 +5,7 @@ import { scheduleOnce } from 'ember-runloop';
 import { addObserver, removeObserver } from 'ember-metal/observer';
 import RSVP from 'rsvp';
 import { task } from 'ember-concurrency';
+import { defaultAttributes } from '../utils/attributes';
 import { defaultComponents } from '../utils/components';
 
 const { Promise } = RSVP;
@@ -26,7 +27,7 @@ export default Component.extend({
   //   'sound',
   //   'visible'
   // ]
-  attributeBindings: defaultComponents,
+  attributeBindings: defaultAttributes.concat(defaultComponents).sort(),
 
   _setUpEvents: task(function * () {
     let trigger;
