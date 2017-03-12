@@ -37,11 +37,13 @@ export default Route.extend({
         renderer: {}
       });
       let attributeBindings = get(component, 'attributeBindings');
+      let nonDefaultAttributeBindings = attributeBindings.filter(attribute => {
+        return !defaultComponents.includes(attribute) && !defaultAttributes.includes(attribute);
+      });
       return EmberObject.create({
         tagName: componentModule.substr(modulePrefix.length),
-        nonDefaultAttributeBindings: attributeBindings.filter(attribute => {
-          return !defaultComponents.includes(attribute) && !defaultAttributes.includes(attribute);
-        })
+        nonDefaultAttributeBindings,
+        shouldHideToggle: !nonDefaultAttributeBindings.length
       });
     }));
   }

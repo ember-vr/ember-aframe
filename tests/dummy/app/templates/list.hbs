@@ -9,28 +9,24 @@
   A-Frame primitives (Ember Components)
 </h2>
 {{#each components as |component|}}
-  <div>
-    {{#if component.nonDefaultAttributeBindings}}
-      <span class="pointer" {{action "toggle" component}}>
-        {{#if component.isExpanded}}
-          &#8863;
-        {{else}}
-          &#8862;
-        {{/if}}
-      </span>
-    {{/if}}
-    {{component.tagName}}
-  </div>
-  {{#if component.isExpanded}}
-    <div>
-      Non-default attributes
-    </div>
-    <ul>
-      {{#each component.nonDefaultAttributeBindings as |attribute|}}
-        <li>
-          {{attribute}}
-        </li>
-      {{/each}}
-    </ul>
-  {{/if}}
+  {{#toggle-list
+    shouldHideToggle=component.shouldHideToggle
+    as |components|
+  }}
+    {{#components.header}}
+      {{component.tagName}}
+    {{/components.header}}
+    {{#components.body}}
+      <div>
+        Non-default attributes
+      </div>
+      <ul>
+        {{#each component.nonDefaultAttributeBindings as |attribute|}}
+          <li>
+            {{attribute}}
+          </li>
+        {{/each}}
+      </ul>
+    {{/components.body}}
+  {{/toggle-list}}
 {{/each}}

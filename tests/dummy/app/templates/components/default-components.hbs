@@ -1,19 +1,16 @@
-<h2>
-  <span class="pointer" {{action "toggle"}}>
-    {{#if isExpanded}}
-      &#8863;
-    {{else}}
-      &#8862;
-    {{/if}}
-  </span>
-  Default A-Frame Components (Ember Bound Attributes)
-</h2>
-{{#if isExpanded}}
-  <ul>
-    {{#each defaultComponents as |component|}}
-      <li>
-        {{component}}
-      </li>
-    {{/each}}
-  </ul>
-{{/if}}
+{{#toggle-list as |components|}}
+  <h2>
+    {{#components.header}}
+      Default A-Frame Components (Ember Bound Attributes)
+    {{/components.header}}
+  </h2>
+  {{#components.body}}
+    <ul>
+      {{#each defaultComponents as |component|}}
+        <li>
+          {{component}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/components.body}}
+{{/toggle-list}}

@@ -1,0 +1,10 @@
+{{#unless shouldHideToggle}}
+  <span class="pointer" {{action "toggle" isExpanded}}>
+    {{#if isExpanded}}
+      &#8863;
+    {{else}}
+      &#8862;
+    {{/if}}
+  </span>
+{{/unless}}
+{{yield}}
