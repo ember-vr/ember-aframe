@@ -49,7 +49,8 @@ export default Mixin.create({
           // this[attribute] = value;
           this.notifyPropertyChange(attribute);
         } else if (AFrame.components[attribute]) {
-          this[attribute] = AFrame.components[attribute].schema.stringify(value);
+          // this[attribute] = AFrame.components[attribute].schema.stringify(value);
+          Ember.set(this, attribute, AFrame.components[attribute].schema.stringify(value));
           this.notifyPropertyChange(attribute);
         }
         triggeredList.push(attribute);
