@@ -3,52 +3,63 @@
 
 const writeFile = require('broccoli-file-creator');
 const mergeTrees = require('broccoli-merge-trees');
-const jsdom = require('jsdom');
 
-let _window = global.window = jsdom.jsdom().defaultView;
-global.navigator = _window.navigator;
-global.document = _window.document;
-global.HTMLElement = _window.HTMLElement;
-Object.defineProperty(_window, 'WebVRConfig', {
-  get () {
-    return global.WebVRConfig;
-  },
-  set (WebVRConfig) {
-    global.WebVRConfig = WebVRConfig;
-  }
-});
+const primitiveDefinitions = {};
+let defaultAttributes;
+let aframe;
 
-const primitives = require('aframe/src/extras/primitives/primitives');
+function runAFrame() {
+  const jsdom = require('jsdom');
 
-const registerPrimitive = primitives.registerPrimitive;
+  let _window = global.window = jsdom.jsdom().defaultView;
+  global.navigator = _window.navigator;
+  global.document = _window.document;
+  global.HTMLElement = _window.HTMLElement;
+  Object.defineProperty(_window, 'WebVRConfig', {
+    get () {
+      return global.WebVRConfig;
+    },
+    set (WebVRConfig) {
+      global.WebVRConfig = WebVRConfig;
+    }
+  });
 
-let primitiveDefinitions = {};
+  const primitives = require('aframe/src/extras/primitives/primitives');
 
-primitives.registerPrimitive = function(name, definition) {
-  primitiveDefinitions[name] = definition;
-  return registerPrimitive.apply(this, arguments);
-};
+  const registerPrimitive = primitives.registerPrimitive;
 
-const aframe = require('aframe/src');
+  primitives.registerPrimitive = function(name, definition) {
+    primitiveDefinitions[name] = definition;
+    return registerPrimitive.apply(this, arguments);
+  };
 
-primitives.registerPrimitive = registerPrimitive;
+  aframe = require('aframe/src');
 
-const propertyTypes = require('aframe/src/core/propertyTypes').propertyTypes;
+  primitives.registerPrimitive = registerPrimitive;
 
-let defaultAttributes = JSON.stringify(Object.keys(propertyTypes));
+  const propertyTypes = require('aframe/src/core/propertyTypes').propertyTypes;
 
-delete global.window;
-delete global.document;
-delete global.HTMLElement;
-delete global.WebVRConfig;
+  defaultAttributes = JSON.stringify(Object.keys(propertyTypes));
+
+  delete global.window;
+  delete global.document;
+  delete global.HTMLElement;
+  delete global.WebVRConfig;
+}
 
 module.exports = {
   name: 'ember-a-frame',
+
+  // included() {
+  //   return this._super.included.apply(this, arguments);
+  // },
 
   treeForAddon(tree) {
     tree = this._super.treeForAddon.apply(this, arguments);
 
     let trees = [tree];
+
+    runAFrame();
 
     trees.push(writeFile('modules/ember-a-frame/utils/attributes.js', `
       const defaultAttributes = ${defaultAttributes};
