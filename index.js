@@ -3,6 +3,7 @@
 
 const writeFile = require('broccoli-file-creator');
 const mergeTrees = require('broccoli-merge-trees');
+const dasherize = require('ember-cli-string-utils').dasherize;
 
 const primitiveDefinitions = {};
 let defaultAttributes;
@@ -39,7 +40,7 @@ function runAFrame() {
 
   const propertyTypes = require('aframe/src/core/propertyTypes').propertyTypes;
 
-  defaultAttributes = JSON.stringify(Object.keys(propertyTypes));
+  defaultAttributes = JSON.stringify(Object.keys(propertyTypes).map(dasherize));
 
   delete global.window;
   delete global.document;
@@ -70,15 +71,19 @@ module.exports = {
     Object.keys(aframe.primitives.primitives).forEach(name => {
       let attributeBindings = [];
       let definition = primitiveDefinitions[name];
-      let defaultComponents = definition.defaultComponents;
-      if (defaultComponents) {
-        let geometry = defaultComponents.geometry;
-        if (geometry) {
-          let primitive = geometry.primitive;
-          if (primitive) {
-            attributeBindings = Object.keys(aframe.geometries[primitive].schema);
-          }
-        }
+      // let defaultComponents = definition.defaultComponents;
+      // if (defaultComponents) {
+      //   let geometry = defaultComponents.geometry;
+      //   if (geometry) {
+      //     let primitive = geometry.primitive;
+      //     if (primitive) {
+      //       attributeBindings = Object.keys(aframe.geometries[primitive].schema);
+      //     }
+      //   }
+      // }
+      let mappings = definition.mappings;
+      if (mappings) {
+        attributeBindings = Object.keys(mappings).sort();
       }
       attributeBindings = JSON.stringify(attributeBindings);
       trees.push(writeFile(`modules/ember-a-frame/components/${name}.js`, `
