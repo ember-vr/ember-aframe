@@ -25,9 +25,7 @@ const registerPrimitive = primitives.registerPrimitive;
 let primitiveDefinitions = {};
 
 primitives.registerPrimitive = function(name, definition) {
-  if (name !== 'a-entity') {
-    primitiveDefinitions[name] = definition;
-  }
+  primitiveDefinitions[name] = definition;
   return registerPrimitive.apply(this, arguments);
 };
 
