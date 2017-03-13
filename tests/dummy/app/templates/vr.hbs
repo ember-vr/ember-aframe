@@ -6,7 +6,7 @@
 
   {{outlet}}
 
-  <a-entity position="-1.5 3 -4">
+  {{#a-entity position="-1.5 3 -4"}}
     {{a-back-button
       "Exit VR"
       position="1.5 1.5 0"
@@ -40,7 +40,7 @@
         click=(transition-to "vr.360-image-gallery")
       }}
     </a-entity>
-  </a-entity>
+  {{/a-entity}}
 
   {{#each otherPeople as |person|}}
     {{other-person
