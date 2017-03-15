@@ -84,6 +84,7 @@ export default Ember.Service.extend(Ember.Evented, {
           //   type: 'connected'
           // }));
           // people.updateRoute();
+          people.get('updateRouteTask').perform();
           resolve(websocket);
         }
     });
@@ -97,15 +98,18 @@ export default Ember.Service.extend(Ember.Evented, {
   },
   updateRoute(route) {
     if (route) {
+      this.get('otherPeople').clear();
       if (route.indexOf('vr.') !== 0) {
         let ws = this.get('ws');
         if (ws) {
           ws.close();
           this.set('ws', null);
         }
+        this.get('updateRouteTask').cancelAll();
+        this.set('myRoute', null);
+        return;
       }
       this.set('myRoute', route);
-      this.get('otherPeople').clear();
     } else {
       route = this.get('myRoute');
       if (!route) {
@@ -142,5 +146,5 @@ export default Ember.Service.extend(Ember.Evented, {
     this.updateRoute();
 
     this.get('updateRouteTask').perform();
-  }).on('init')
+  })
 });
