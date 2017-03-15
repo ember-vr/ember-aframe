@@ -1,4 +1,5 @@
 import AEntity from 'ember-a-frame/components/a-entity';
+import stringifyComponent from 'ember-a-frame/macros/stringify-component';
 import stringifyCoordinates from 'ember-a-frame/macros/stringify-coordinates';
 import { readOnly } from 'ember-computed';
 
@@ -16,6 +17,11 @@ export default AEntity.extend({
   _posX: readOnly('params.posX'),
   _posY: readOnly('params.posY'),
   _posZ: readOnly('params.posZ'),
+
+  objModel: stringifyComponent('obj-model', {
+    obj: 'obj',
+    mtl: 'mtl'
+  }),
 
   rotation: stringifyCoordinates({
     x: '_rotX',
