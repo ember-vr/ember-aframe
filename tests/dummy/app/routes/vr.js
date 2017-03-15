@@ -1,9 +1,6 @@
 import Route from 'ember-route';
-import injectService from 'ember-service/inject';
 
 export default Route.extend({
-  people: injectService(),
-
   queryParams: {
     rotX: {
       replace: true
@@ -19,12 +16,6 @@ export default Route.extend({
     },
     posZ: {
       replace: true
-    }
-  },
-
-  actions: {
-    didTransition() {
-      // this.get('people').updateRoute(this.controller.get('currentRouteName'));
     }
   }
 });

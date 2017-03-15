@@ -2,6 +2,7 @@ import Controller from 'ember-controller';
 import injectService from 'ember-service/inject';
 import injectController from 'ember-controller/inject';
 import { readOnly } from 'ember-computed';
+import on from 'ember-evented/on';
 import observer from 'ember-metal/observer';
 import get from 'ember-metal/get';
 import raw from 'ember-macro-helpers/raw';
@@ -40,9 +41,14 @@ export default Controller.extend({
 
   otherPeople: readOnly('people.otherPeople'),
 
-  updateRoute: observer('currentRouteName', function() {
-    get(this, 'people').updateRoute(get(this, 'currentRouteName'));
-  }),
+  updateRoute: on('init', observer('currentRouteName', function() {
+    let currentRouteName = get(this, 'currentRouteName');
+    if (!currentRouteName) {
+      return;
+    }
+
+    get(this, 'people').updateRoute(currentRouteName);
+  })),
 
   actions: {
     updateQueryParams(params) {
