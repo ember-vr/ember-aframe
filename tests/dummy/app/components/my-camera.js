@@ -20,6 +20,26 @@ export default ACamera.extend({
     this.set('initialPosYOffset', this.element.getAttribute('position').y);
   }),
 
+  haveIMoved(prevParamsKey, params) {
+    let prevParams = this.get(prevParamsKey);
+    if (!prevParams) {
+      prevParams = {};
+    }
+    let didIMove = params.rotX !== prevParams.rotX
+      || params.rotY !== prevParams.rotY
+      || params.posX !== prevParams.posX
+      || params.posY !== prevParams.posY
+      || params.posZ !== prevParams.posZ;
+    this.set(prevParamsKey, {
+      rotX: params.rotX,
+      rotY: params.rotY,
+      posX: params.posX,
+      posY: params.posY,
+      posZ: params.posZ
+    });
+    return didIMove;
+  },
+
   cameraMoveFastTask: task(function * () {
     yield timeout(10);
 
@@ -33,7 +53,11 @@ export default ACamera.extend({
       posY,
       posZ
     };
-    this.sendAction('cameraMoveFast', params);
+
+    let didIMove = this.haveIMoved('fastParams', params);
+    if (didIMove) {
+      this.sendAction('cameraMoveFast', params);
+    }
 
     this.set('params', params);
 
@@ -51,7 +75,10 @@ export default ACamera.extend({
 
     params.posY -= this.get('initialPosYOffset');
 
-    this.sendAction('cameraMoveSlow', params);
+    let didIMove = this.haveIMoved('slowParams', params);
+    if (didIMove) {
+      this.sendAction('cameraMoveSlow', params);
+    }
 
     this.get('cameraMoveSlowTask').perform();
   }).on('loaded')
