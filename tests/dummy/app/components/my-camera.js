@@ -1,4 +1,5 @@
 import ACamera from 'ember-a-frame/components/a-camera';
+import on from 'ember-enevted/on';
 import { tag, sum } from 'ember-awesome-macros';
 import { task, timeout } from 'ember-concurrency';
 // import computed from 'ember-macro-helpers/computed';
@@ -15,7 +16,7 @@ export default ACamera.extend({
     return stringifyCoordinates(this.element.getAttribute('position')).trim();
   },
 
-  onLoaded: Ember.on('loaded', function() {
+  onLoaded: on('loaded', function() {
     this.set('_originalPosition', this.stringify());
     this.set('initialPosYOffset', this.element.getAttribute('position').y);
   }),
