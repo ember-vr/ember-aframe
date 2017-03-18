@@ -1,5 +1,5 @@
 import ACamera from 'ember-a-frame/components/a-camera';
-import on from 'ember-enevted/on';
+import on from 'ember-evented/on';
 import { tag, sum } from 'ember-awesome-macros';
 import { task, timeout } from 'ember-concurrency';
 // import computed from 'ember-macro-helpers/computed';
