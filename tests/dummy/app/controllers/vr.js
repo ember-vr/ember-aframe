@@ -19,13 +19,13 @@ export default Controller.extend({
   people: injectService(),
   application: injectController(),
 
-  queryParams: [
-    'rotX',
-    'rotY',
-    'posX',
-    'posY',
-    'posZ'
-  ],
+  // queryParams: [
+  //   'rotX',
+  //   'rotY',
+  //   'posX',
+  //   'posY',
+  //   'posZ'
+  // ],
 
   rotX: 0,
   rotY: 0,
