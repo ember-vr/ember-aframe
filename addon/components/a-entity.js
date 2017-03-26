@@ -3,12 +3,9 @@ import get from 'ember-metal/get';
 import on from 'ember-evented/on';
 import { scheduleOnce } from 'ember-runloop';
 import { addObserver, removeObserver } from 'ember-metal/observer';
-import RSVP from 'rsvp';
-import { task } from 'ember-concurrency';
+import { task, waitForEvent } from 'ember-concurrency';
 import { defaultAttributes } from '../utils/attributes';
 import { defaultComponents } from '../utils/components';
-
-const { Promise } = RSVP;
 
 function playAfterChange() {
   scheduleOnce('afterRender', () => {
@@ -30,20 +27,8 @@ export default Component.extend({
   attributeBindings: defaultAttributes.concat(defaultComponents).sort(),
 
   _setUpEvents: task(function * () {
-    let trigger;
-    try {
-      yield new Promise(resolve => {
-        trigger = () => {
-          resolve();
-          this.trigger('loaded');
-        };
-        this.$().one('loaded', trigger);
-      });
-    } catch (err) {
-      if (trigger) {
-        this.$().off('loaded', trigger);
-      }
-    }
+    yield waitForEvent(this.$(), 'loaded');
+    this.trigger('loaded');
   }).on('didInsertElement'),
 
   _toggleObservers(func) {
