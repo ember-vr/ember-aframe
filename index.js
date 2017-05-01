@@ -1,15 +1,15 @@
-/* jshint node: true */
+/* eslint-env node */
 'use strict';
 
 const writeFile = require('broccoli-file-creator');
 const mergeTrees = require('broccoli-merge-trees');
-const dasherize = require('ember-cli-string-utils').dasherize;
 
 const primitiveDefinitions = {};
 let defaultAttributes;
 let aframe;
 
 function runAFrame() {
+  const dasherize = require('ember-cli-string-utils').dasherize;
   const jsdom = require('jsdom');
 
   let _window = global.window = jsdom.jsdom().defaultView;
@@ -51,18 +51,16 @@ function runAFrame() {
 module.exports = {
   name: 'ember-a-frame',
 
-  // included() {
-  //   return this._super.included.apply(this, arguments);
-  // },
-
-  treeForAddon(tree) {
-    tree = this._super.treeForAddon.apply(this, arguments);
-
-    let trees = [tree];
-
+  included() {
     runAFrame();
 
-    trees.push(writeFile('modules/ember-a-frame/utils/attributes.js', `
+    return this._super.included.apply(this, arguments);
+  },
+
+  treeForAddon(tree) {
+    let trees = [tree];
+
+    trees.push(writeFile('utils/attributes.js', `
       const defaultAttributes = ${defaultAttributes};
 
       export { defaultAttributes };
@@ -86,7 +84,7 @@ module.exports = {
         attributeBindings = Object.keys(mappings).sort();
       }
       attributeBindings = JSON.stringify(attributeBindings);
-      trees.push(writeFile(`modules/ember-a-frame/components/${name}.js`, `
+      trees.push(writeFile(`components/${name}.js`, `
         import AEntity from './a-entity';
 
         export default AEntity.extend({
@@ -94,11 +92,28 @@ module.exports = {
           attributeBindings: ${attributeBindings}
         });
       `));
-      trees.push(writeFile(`modules/${this.app.name}/components/${name}.js`, `
+    });
+
+    tree = mergeTrees(trees);
+
+    tree = this._super.treeForAddon.call(this, tree);
+
+    return tree;
+  },
+
+  treeForApp(tree) {
+    tree = this._super.treeForApp.call(this, tree);
+
+    let trees = [tree];
+
+    Object.keys(aframe.primitives.primitives).forEach(name => {
+      trees.push(writeFile(`components/${name}.js`, `
         export { default } from 'ember-a-frame/components/${name}';
       `));
     });
 
-    return mergeTrees(trees);
+    tree = mergeTrees(trees);
+
+    return tree;
   }
 };
