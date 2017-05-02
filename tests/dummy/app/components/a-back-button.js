@@ -1,13 +1,13 @@
 // import AFrame from 'aframe';
-import AEntity from 'ember-a-frame/components/a-entity';
+import AEntity from 'ember-aframe/components/a-entity';
 // import { task } from 'ember-concurrency';
 // import anime from 'ember-animejs';
 import on from 'ember-evented/on';
 import computed from 'ember-macro-helpers/computed';
-import parseCoordinates from 'ember-a-frame/utils/parse-coordinates';
-import stringifyCoordinates from 'ember-a-frame/utils/stringify-coordinates';
-import stringifyComponent from 'ember-a-frame/utils/stringify-component';
-import AAttributeObserver from 'ember-a-frame/mixins/a-attribute-observer';
+import parseCoordinates from 'ember-aframe/utils/parse-coordinates';
+import stringifyCoordinates from 'ember-aframe/utils/stringify-coordinates';
+import stringifyComponent from 'ember-aframe/utils/stringify-component';
+import AAttributeObserver from 'ember-aframe/mixins/a-attribute-observer';
 // import raw from 'ember-macro-helpers/raw';
 import { not, tag, toString } from 'ember-awesome-macros';
 

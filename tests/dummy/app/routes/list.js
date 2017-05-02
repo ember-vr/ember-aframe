@@ -2,10 +2,10 @@ import Route from 'ember-route';
 import EmberObject from 'ember-object';
 // import getOwner from 'ember-owner/get';
 import get from 'ember-metal/get';
-import { defaultComponents } from 'ember-a-frame/utils/components';
-import { defaultAttributes } from 'ember-a-frame/utils/attributes';
+import { defaultComponents } from 'ember-aframe/utils/components';
+import { defaultAttributes } from 'ember-aframe/utils/attributes';
 
-const modulePrefix = 'ember-a-frame/components/';
+const modulePrefix = 'ember-aframe/components/';
 
 export default Route.extend({
   setupController(controller) {

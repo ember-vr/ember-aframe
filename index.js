@@ -49,7 +49,7 @@ function runAFrame() {
 }
 
 module.exports = {
-  name: 'ember-a-frame',
+  name: 'ember-aframe',
 
   included() {
     runAFrame();
@@ -108,7 +108,7 @@ module.exports = {
 
     Object.keys(aframe.primitives.primitives).forEach(name => {
       trees.push(writeFile(`components/${name}.js`, `
-        export { default } from 'ember-a-frame/components/${name}';
+        export { default } from 'ember-aframe/components/${name}';
       `));
     });
 

@@ -1,1 +1,1 @@
-export { default, stringify } from 'ember-a-frame/helpers/stringify';
+export { default, stringify } from 'ember-aframe/helpers/stringify';

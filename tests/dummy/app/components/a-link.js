@@ -1,4 +1,4 @@
-import AEntity from 'ember-a-frame/components/a-entity';
+import AEntity from 'ember-aframe/components/a-entity';
 import { tag } from 'ember-awesome-macros';
 
 export default AEntity.extend({

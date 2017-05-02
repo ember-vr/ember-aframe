@@ -1,1 +1,1 @@
-export { default } from 'ember-a-frame/macros/stringify-component';
+export { default } from 'ember-aframe/macros/stringify-component';

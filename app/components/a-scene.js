@@ -1,1 +1,1 @@
-export { default } from 'ember-a-frame/components/a-scene';
+export { default } from 'ember-aframe/components/a-scene';

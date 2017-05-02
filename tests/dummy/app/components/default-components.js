@@ -1,5 +1,5 @@
 import Component from 'ember-component';
-import { defaultComponents } from 'ember-a-frame/utils/components';
+import { defaultComponents } from 'ember-aframe/utils/components';
 
 export default Component.extend({
   defaultComponents

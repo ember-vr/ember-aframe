@@ -5,7 +5,7 @@ export default Ember.Service.extend(Ember.Evented, {
   otherPeople: Ember.A(),
 
   setUpSocket() {
-    var wsUri = "wss://ember-a-frame-server.herokuapp.com/";
+    var wsUri = "wss://ember-aframe-server.herokuapp.com/";
     let websocket = new WebSocket(wsUri);
     websocket.onclose = function(evt) { onClose(evt) };
     websocket.onmessage = function(evt) { onMessage(evt) };

@@ -1,1 +1,1 @@
-export { default } from 'ember-a-frame/utils/parse-coordinates';
+export { default } from 'ember-aframe/utils/parse-coordinates';

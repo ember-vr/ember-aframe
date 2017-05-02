@@ -1,6 +1,6 @@
-import AEntity from 'ember-a-frame/components/a-entity';
-import stringifyComponent from 'ember-a-frame/macros/stringify-component';
-import stringifyCoordinates from 'ember-a-frame/macros/stringify-coordinates';
+import AEntity from 'ember-aframe/components/a-entity';
+import stringifyComponent from 'ember-aframe/macros/stringify-component';
+import stringifyCoordinates from 'ember-aframe/macros/stringify-coordinates';
 import { readOnly } from 'ember-computed';
 
 export default AEntity.extend({

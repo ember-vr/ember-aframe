@@ -1,1 +1,1 @@
-export { default } from 'ember-a-frame/macros/stringify-coordinates';
+export { default } from 'ember-aframe/macros/stringify-coordinates';

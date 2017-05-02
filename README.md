@@ -1,16 +1,16 @@
-# ember-a-frame
+# ember-aframe
 
-[![npm version](https://badge.fury.io/js/ember-a-frame.svg)](https://badge.fury.io/js/ember-a-frame)
-[![Build Status](https://travis-ci.org/kellyselden/ember-a-frame.svg?branch=master)](https://travis-ci.org/kellyselden/ember-a-frame)
+[![npm version](https://badge.fury.io/js/ember-aframe.svg)](https://badge.fury.io/js/ember-aframe)
+[![Build Status](https://travis-ci.org/kellyselden/ember-aframe.svg?branch=master)](https://travis-ci.org/kellyselden/ember-aframe)
 
-[Demo](https://kellyselden.github.io/ember-a-frame)
+[Demo](https://kellyselden.github.io/ember-aframe)
 
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
 
 * `git clone <repository-url>` this repository
-* `cd ember-a-frame`
+* `cd ember-aframe`
 * `npm install`
 
 ## Running
