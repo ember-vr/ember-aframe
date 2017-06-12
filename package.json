@@ -19,7 +19,7 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "aframe": "aframevr/aframe#0b460db29",
+    "aframe": "aframevr/aframe#0f641d2e",
     "broccoli-file-creator": "^1.1.1",
     "broccoli-merge-trees": "^2.0.0",
     "ember-cli-babel": "^6.0.0",
