@@ -1,5 +1,7 @@
 # ember-aframe
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kellyselden/ember-aframe.svg)](https://greenkeeper.io/)
+
 [![npm version](https://badge.fury.io/js/ember-aframe.svg)](https://badge.fury.io/js/ember-aframe)
 [![Build Status](https://travis-ci.org/kellyselden/ember-aframe.svg?branch=master)](https://travis-ci.org/kellyselden/ember-aframe)
 
