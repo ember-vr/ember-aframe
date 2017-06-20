@@ -65,5 +65,10 @@
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "demoURL": "https://kellyselden.github.io/ember-aframe"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "jsdom"
+    ]
   }
 }
