@@ -5,7 +5,7 @@ const { components } = AFrame;
 const conflictedComponents = ['layout'];
 
 function filter(components) {
-  return components.filter(c => !conflictedComponents.includes(c));;
+  return components.filter(c => !conflictedComponents.includes(c));
 }
 
 const discoveredComponents = Object.keys(components).sort();

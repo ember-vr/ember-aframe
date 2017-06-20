@@ -1,3 +1,5 @@
+/* global requirejs */
+
 import Controller from 'ember-controller';
 import EmberObject from 'ember-object';
 import get from 'ember-metal/get';

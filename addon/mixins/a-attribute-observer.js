@@ -1,4 +1,5 @@
 import Mixin from 'ember-metal/mixin';
+import set from 'ember-metal/set';
 import AFrame from 'aframe';
 import { task, timeout } from 'ember-concurrency';
 
@@ -50,7 +51,7 @@ export default Mixin.create({
           this.notifyPropertyChange(attribute);
         } else if (AFrame.components[attribute]) {
           // this[attribute] = AFrame.components[attribute].schema.stringify(value);
-          Ember.set(this, attribute, AFrame.components[attribute].schema.stringify(value));
+          set(this, attribute, AFrame.components[attribute].schema.stringify(value));
           this.notifyPropertyChange(attribute);
         }
         triggeredList.push(attribute);

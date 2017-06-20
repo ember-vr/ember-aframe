@@ -15,7 +15,7 @@ export default Ember.Service.extend(Ember.Evented, {
 
     people.set('ws', websocket);
 
-    function onClose(evt)
+    function onClose(/* evt */)
     {
       // debugger;
     }
@@ -71,14 +71,14 @@ export default Ember.Service.extend(Ember.Evented, {
       }
     }
 
-    function onError(evt)
+    function onError(/* evt */)
     {
       // debugger;
     }
 
     return new Ember.RSVP.Promise(resolve => {
         websocket.onopen = function(evt) { onOpen(evt) };
-        function onOpen(evt)
+        function onOpen(/* evt */)
         {
           // websocket.send(JSON.stringify({
           //   type: 'connected'
