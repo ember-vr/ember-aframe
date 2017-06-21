@@ -18,9 +18,16 @@ export default Component.extend({
 
     this.set('components', componentModules.map(componentModule => {
       let componentDefinition = requirejs(componentModule).default;
-      let component = componentDefinition.create({
-        renderer: {}
-      });
+      let component;
+      try {
+        component = componentDefinition.create({
+          renderer: {}
+        });
+      } catch (err) {
+        // this is for ember < 2.10
+        // can remove once only support 2.12
+        component = componentDefinition.create();
+      }
       let attributeBindings = get(component, 'attributeBindings');
       let nonDefaultAttributeBindings = attributeBindings.filter(attribute => {
         return !defaultComponents.includes(attribute) && !defaultAttributes.includes(attribute);
