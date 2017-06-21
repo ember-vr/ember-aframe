@@ -1,7 +1,7 @@
 {{#toggle-list
   as |_components|
 }}
-  <h2>
+  <h2 data-test-primitive-list-header>
     {{#_components.header}}
       A-Frame primitives (Ember Components)
     {{/_components.header}}
@@ -9,6 +9,7 @@
   {{#_components.body}}
     {{#each components as |component|}}
       {{#toggle-list
+        data-test-primitive=component.tagName
         shouldHideToggle=component.shouldHideToggle
         as |components|
       }}
