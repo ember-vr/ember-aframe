@@ -1,5 +1,5 @@
 {{#toggle-list as |components|}}
-  <h2>
+  <h2 data-test-default-components-header>
     {{#components.header}}
       Default A-Frame Components (Ember Bound Attributes)
     {{/components.header}}
@@ -7,7 +7,7 @@
   {{#components.body}}
     <ul>
       {{#each defaultComponents as |component|}}
-        <li>
+        <li data-test-default-component>
           {{component}}
         </li>
       {{/each}}
