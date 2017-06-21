@@ -1,6 +1,6 @@
 /* global requirejs */
 
-import Controller from 'ember-controller';
+import Component from 'ember-component';
 import EmberObject from 'ember-object';
 import get from 'ember-metal/get';
 import { defaultComponents } from 'ember-aframe/utils/components';
@@ -8,8 +8,10 @@ import { defaultAttributes } from 'ember-aframe/utils/attributes';
 
 const modulePrefix = 'ember-aframe/components/';
 
-export default Controller.extend({
-  setup() {
+export default Component.extend({
+  init() {
+    this._super(...arguments);
+
     let componentModules = Object.keys(requirejs._eak_seen).filter(module => {
       return module.indexOf(`${modulePrefix}a-`) === 0;
     });

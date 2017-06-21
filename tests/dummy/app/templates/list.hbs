@@ -4,37 +4,4 @@
 
 {{default-attributes}}
 {{default-components}}
-
-{{#toggle-list
-  as |_components|
-}}
-  <h2>
-    {{#_components.header}}
-      A-Frame primitives (Ember Components)
-    {{/_components.header}}
-  </h2>
-  {{#_components.body}}
-    {{#each components as |component|}}
-      {{#toggle-list
-        shouldHideToggle=component.shouldHideToggle
-        as |components|
-      }}
-        {{#components.header}}
-          {{component.tagName}}
-        {{/components.header}}
-        {{#components.body}}
-          <div>
-            Non-default attributes
-          </div>
-          <ul>
-            {{#each component.nonDefaultAttributeBindings as |attribute|}}
-              <li>
-                {{attribute}}
-              </li>
-            {{/each}}
-          </ul>
-        {{/components.body}}
-      {{/toggle-list}}
-    {{/each}}
-  {{/_components.body}}
-{{/toggle-list}}
+{{primitive-list}}
