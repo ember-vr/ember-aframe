@@ -38,7 +38,7 @@
     "ember-aframe-shim": "^1.0.0",
     "ember-ajax": "^3.0.0",
     "ember-animejs": "0.0.2",
-    "ember-browserify": "1.1.14",
+    "ember-browserify": "^1.1.14",
     "ember-cli": "2.13.3",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.0.0",
