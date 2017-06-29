@@ -52,6 +52,7 @@
     "ember-component-inbound-actions": "1.2.1",
     "ember-controller-lifecycle": "^0.4.1",
     "ember-disable-prototype-extensions": "^1.1.2",
+    "ember-fork-me": "^1.0.1",
     "ember-load-initializers": "^1.0.0",
     "ember-macro-test-helpers": "^3.0.0",
     "ember-resolver": "^4.0.0",
