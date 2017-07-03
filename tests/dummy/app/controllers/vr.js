@@ -1,4 +1,5 @@
 import Controller from 'ember-controller';
+import QueryParamsControllerMixin from 'ember-aframe-camera-extras/mixins/query-params-controller';
 import injectService from 'ember-service/inject';
 import injectController from 'ember-controller/inject';
 import { readOnly } from 'ember-computed';
@@ -12,23 +13,9 @@ import { eq } from 'ember-awesome-macros';
 // https://github.com/aframevr/aframe/pull/2418
 // const DEFAULT_CAMERA_HEIGHT = 1.6;
 
-export default Controller.extend({
+export default Controller.extend(QueryParamsControllerMixin, {
   people: injectService(),
   application: injectController(),
-
-  // queryParams: [
-  //   'rotX',
-  //   'rotY',
-  //   'posX',
-  //   'posY',
-  //   'posZ'
-  // ],
-
-  rotX: 0,
-  rotY: 0,
-  posX: 0,
-  posY: 0,
-  posZ: 0,
 
   currentRouteName: readOnly('application.currentRouteName'),
 
@@ -46,9 +33,6 @@ export default Controller.extend({
   })),
 
   actions: {
-    updateQueryParams(params) {
-      this.setProperties(params);
-    },
     sendData(params) {
       get(this, 'people').updateLocation(params);
     }

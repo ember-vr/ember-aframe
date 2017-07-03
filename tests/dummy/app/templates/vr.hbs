@@ -51,12 +51,12 @@
   {{/each}}
 
   {{my-camera
-    rotX=rotX
-    rotY=rotY
-    posX=posX
-    posY=posY
-    posZ=posZ
-    cameraMoveSlow=(action "updateQueryParams")
+    cameraQueryParams=cameraQueryParams
+    intervals=(hash
+      cameraMoveSlow=(hash interval=1000 adjustHeight=true)
+      cameraMoveFast=(hash interval=10)
+    )
+    cameraMoveSlow=(action "updateCameraQueryParams")
     cameraMoveFast=(action "sendData")
   }}
 </a-scene>

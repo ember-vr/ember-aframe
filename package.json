@@ -36,6 +36,7 @@
     "aframe-event-set-component": "^3.0.2",
     "aframe-layout-component": "^4.0.2",
     "broccoli-asset-rev": "^2.4.5",
+    "ember-aframe-camera-extras": "^0.1.0",
     "ember-ajax": "^3.0.0",
     "ember-animejs": "0.0.2",
     "ember-browserify": "^1.1.14",
