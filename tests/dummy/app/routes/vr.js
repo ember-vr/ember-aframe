@@ -1,21 +1,4 @@
 import Route from 'ember-route';
+import QueryParamsRouteMixin from 'ember-aframe-camera-extras/mixins/query-params-route';
 
-export default Route.extend({
-  queryParams: {
-    rotX: {
-      replace: true
-    },
-    rotY: {
-      replace: true
-    },
-    posX: {
-      replace: true
-    },
-    posY: {
-      replace: true
-    },
-    posZ: {
-      replace: true
-    }
-  }
-});
+export default Route.extend(QueryParamsRouteMixin);
