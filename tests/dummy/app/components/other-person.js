@@ -23,27 +23,9 @@ export default AEntity.extend({
     mtl: 'mtl'
   }),
 
-  rotation: stringifyCoordinates({
-    x: '_rotX',
-    y: '_rotY',
-    z: 0
-  }),
+  rotation: stringifyCoordinates('_rotX', '_rotY', 0),
+  position: stringifyCoordinates('_posX', '_posY', '_posZ'),
 
-  position: stringifyCoordinates({
-    x: '_posX',
-    y: '_posY',
-    z: '_posZ'
-  }),
-
-  modelRotation: stringifyCoordinates({
-    x: 0,
-    y: 181,
-    z: 0
-  }),
-
-  modelPosition: stringifyCoordinates({
-    x: -0.25,
-    y: -0.75,
-    z: 0.75
-  })
+  modelRotation: stringifyCoordinates(0, 181, 0),
+  modelPosition: stringifyCoordinates(-0.25, -0.75, 0.75)
 });
