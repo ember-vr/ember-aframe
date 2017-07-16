@@ -6,6 +6,8 @@
 
 [Demo](https://kellyselden.github.io/ember-aframe)
 
+[![ember-aframe](http://img.youtube.com/vi/I3o3lV_yfIE/0.jpg)](https://www.youtube.com/watch?v=I3o3lV_yfIE)
+
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
