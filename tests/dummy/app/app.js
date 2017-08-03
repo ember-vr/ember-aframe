@@ -12,11 +12,7 @@ import 'npm:aframe-layout-component';
 //   return setAttribute.apply(this, arguments);
 // };
 
-let App;
-
-Ember.MODEL_FACTORY_INJECTIONS = true;
-
-App = Ember.Application.extend({
+const App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
   Resolver
