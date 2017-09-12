@@ -40,7 +40,7 @@
     "ember-ajax": "^3.0.0",
     "ember-animejs": "0.0.2",
     "ember-browserify": "^1.1.14",
-    "ember-cli": "~2.14.1",
+    "ember-cli": "~2.15.1",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.0.0",
     "ember-cli-github-pages": "0.1.2",
