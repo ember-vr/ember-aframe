@@ -1,8 +1,12 @@
-import Ember from 'ember';
+import { Promise, resolve } from 'rsvp';
+import EmberObject from '@ember/object';
+import { A as emberA } from '@ember/array';
+import Evented from '@ember/object/evented';
+import Service from '@ember/service';
 import { task, timeout } from 'ember-concurrency';
 
-export default Ember.Service.extend(Ember.Evented, {
-  otherPeople: Ember.A(),
+export default Service.extend(Evented, {
+  otherPeople: emberA(),
 
   setUpSocket() {
     var wsUri = "wss://ember-aframe-server.herokuapp.com/";
@@ -58,7 +62,7 @@ export default Ember.Service.extend(Ember.Evented, {
         //   break;
         case 'join':
           // if (!person) {
-            otherPeople.pushObject(Ember.Object.create({
+            otherPeople.pushObject(EmberObject.create({
               id
             }));
           // }
@@ -76,7 +80,7 @@ export default Ember.Service.extend(Ember.Evented, {
       // debugger;
     }
 
-    return new Ember.RSVP.Promise(resolve => {
+    return new Promise(resolve => {
         websocket.onopen = function(evt) { onOpen(evt) };
         function onOpen(/* evt */)
         {
@@ -129,7 +133,7 @@ export default Ember.Service.extend(Ember.Evented, {
     if (!ws) {
       promise = this.setUpSocket();
     } else {
-      promise = Ember.RSVP.resolve(ws);
+      promise = resolve(ws);
     }
     promise.then(ws => {
       if (ws.readyState === WebSocket.OPEN) {
