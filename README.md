@@ -3,6 +3,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/ember-vr/ember-aframe.svg)](https://greenkeeper.io/)
 [![npm version](https://badge.fury.io/js/ember-aframe.svg)](https://badge.fury.io/js/ember-aframe)
 [![Build Status](https://travis-ci.org/ember-vr/ember-aframe.svg?branch=master)](https://travis-ci.org/ember-vr/ember-aframe)
+![Ember Version](https://embadge.io/v1/badge.svg?start=2.12.0)
 
 [Demo](https://ember-vr.github.io/ember-aframe)
 
