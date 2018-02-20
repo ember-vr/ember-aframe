@@ -21,7 +21,7 @@
   "dependencies": {
     "aframe": "aframevr/aframe#cef9c00",
     "broccoli-file-creator": "^1.1.1",
-    "broccoli-merge-trees": "^2.0.0",
+    "broccoli-merge-trees": "^3.0.0",
     "ember-aframe-shim": "^1.0.0",
     "ember-awesome-macros": "^0.40.0",
     "ember-cli-babel": "^6.6.0",
