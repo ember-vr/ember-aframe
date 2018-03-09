@@ -32,7 +32,7 @@
     "jsdom": "^9.11.0"
   },
   "devDependencies": {
-    "aframe-animation-component": "^3.2.5",
+    "aframe-animation-component": "^4.0.0",
     "aframe-event-set-component": "^4.0.0",
     "aframe-layout-component": "^4.0.2",
     "broccoli-asset-rev": "^2.4.5",
