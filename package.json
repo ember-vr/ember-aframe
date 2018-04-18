@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "aframe": "aframevr/aframe#cef9c00",
-    "broccoli-file-creator": "^1.1.1",
+    "broccoli-file-creator": "^2.0.0",
     "broccoli-merge-trees": "^2.0.0",
     "ember-aframe-shim": "^2.0.0",
     "ember-awesome-macros": "^1.0.0",
