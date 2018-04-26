@@ -58,7 +58,7 @@
     "ember-macro-test-helpers": "^3.0.0",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.17.0",
-    "ember-test-selectors": "^0.3.4",
+    "ember-test-selectors": "^1.0.0",
     "ember-transition-helper": "0.0.6",
     "loader.js": "^4.2.3"
   },
