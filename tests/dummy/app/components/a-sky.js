@@ -1,6 +1,6 @@
 import ASky from 'ember-aframe/components/a-sky';
 import stringifyComponent from 'ember-aframe/macros/stringify-component';
-import raw from 'ember-macro-helpers/raw';
+import { raw } from 'ember-awesome-macros';
 import { task, timeout } from 'ember-concurrency';
 import InboundActions from 'ember-component-inbound-actions/inbound-actions';
 

@@ -6,8 +6,7 @@ import { readOnly } from 'ember-computed';
 import on from 'ember-evented/on';
 import observer from 'ember-metal/observer';
 import get from 'ember-metal/get';
-import raw from 'ember-macro-helpers/raw';
-import { eq } from 'ember-awesome-macros';
+import { eq, raw } from 'ember-awesome-macros';
 
 // from https://github.com/aframevr/aframe/blob/master/src/constants/index.js#L3
 // https://github.com/aframevr/aframe/pull/2418
