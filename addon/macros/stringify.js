@@ -1,7 +1,7 @@
-import computed from 'ember-macro-helpers/computed';
-import hash from 'ember-awesome-macros/hash';
-import stringify from 'ember-aframe/utils/stringify';
+import { computed } from 'ember-macro-helpers';
+import { hash } from 'ember-awesome-macros';
+import stringify from '../utils/stringify';
 
 export default function(key) {
-  return computed(hash(key), stringify).readOnly();
+  return computed(hash(key), stringify);
 }
