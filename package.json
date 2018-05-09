@@ -28,7 +28,7 @@
     "ember-cli-htmlbars": "^2.0.2",
     "ember-cli-string-utils": "^1.1.0",
     "ember-concurrency": "^0.8.1",
-    "ember-macro-helpers": "^0.18.0",
+    "ember-macro-helpers": "^1.0.0",
     "jsdom": "^9.11.0"
   },
   "devDependencies": {
