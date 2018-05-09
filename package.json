@@ -23,7 +23,7 @@
     "broccoli-file-creator": "^1.1.1",
     "broccoli-merge-trees": "^2.0.0",
     "ember-aframe-shim": "^1.0.0",
-    "ember-awesome-macros": "^0.44.0",
+    "ember-awesome-macros": "^1.0.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-htmlbars": "^2.0.2",
     "ember-cli-string-utils": "^1.1.0",
