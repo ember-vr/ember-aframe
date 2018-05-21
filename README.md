@@ -9,14 +9,18 @@
 
 [![ember-aframe](http://img.youtube.com/vi/I3o3lV_yfIE/0.jpg)](https://www.youtube.com/watch?v=I3o3lV_yfIE)
 
-This README outlines the details of collaborating on this Ember addon.
-
 ## Installation
+
+* `ember install ember-aframe`
+* Add `import 'aframe';` to `app/app.js`
+
+The remainder of this README outlines the details of collaborating on this Ember addon.
+
+## Dev Installation
 
 * `git clone <repository-url>` this repository
 * `cd ember-aframe`
 * `npm install`
-* Add `import 'aframe';` to `app/app.js`
 
 ## Running
 
