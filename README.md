@@ -16,6 +16,7 @@ This README outlines the details of collaborating on this Ember addon.
 * `git clone <repository-url>` this repository
 * `cd ember-aframe`
 * `npm install`
+* Add `import 'aframe';` to `app/app.js`
 
 ## Running
 
