@@ -56,7 +56,7 @@
     "ember-fork-me": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-macro-test-helpers": "^3.0.0",
-    "ember-resolver": "^4.0.0",
+    "ember-resolver": "^5.0.0",
     "ember-source": "~2.17.0",
     "ember-test-selectors": "^0.3.4",
     "ember-transition-helper": "1.0.0",
