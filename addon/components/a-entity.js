@@ -1,8 +1,7 @@
-import Component from 'ember-component';
-import get from 'ember-metal/get';
-import on from 'ember-evented/on';
-import { scheduleOnce } from 'ember-runloop';
-import { addObserver, removeObserver } from 'ember-metal/observer';
+import Component from '@ember/component';
+import { get } from '@ember/object';
+import { scheduleOnce } from '@ember/runloop';
+import { addObserver, removeObserver } from '@ember/object/observers';
 import { task, waitForEvent } from 'ember-concurrency';
 import { defaultAttributes } from '../utils/attributes';
 import { defaultComponents } from '../utils/components';
@@ -37,11 +36,15 @@ export default Component.extend({
     });
   },
 
-  _onDidInsertElement: on('didInsertElement', function() {
-    this._toggleObservers(addObserver);
-  }),
+  didInsertElement() {
+    this._super(...arguments);
 
-  _onWillDestroyElement: on('willDestroyElement', function() {
+    this._toggleObservers(addObserver);
+  },
+
+  willDestroyElement() {
+    this._super(...arguments);
+
     this._toggleObservers(removeObserver);
-  })
+  }
 });

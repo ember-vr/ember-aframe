@@ -2,7 +2,6 @@
 import AEntity from 'ember-aframe/components/a-entity';
 // import { task } from 'ember-concurrency';
 // import anime from 'ember-animejs';
-import on from 'ember-evented/on';
 // import parseCoordinates from 'ember-aframe/utils/parse-coordinates';
 // import stringifyCoordinates from 'ember-aframe/utils/stringify-coordinates';
 // import stringifyComponent from 'ember-aframe/utils/stringify-component';
@@ -27,21 +26,21 @@ const MyComponent = AEntity.extend(
     'a-text:text'
   ],
 
-  attributesToObserve: {
-    position: {
-      // action: 'hover'
-    }
-  },
+  // attributesToObserve: {
+  //   position: {
+  //     // action: 'hover'
+  //   }
+  // },
 
-  onDidInsertElement: on('didInsertElement', function() {
-    // let setAttribute = this._setAttribute = this.element.setAttribute;
-    // this.element.setAttribute = function() {
-    //   return setAttribute.apply(this, arguments);
-    // };
-  }),
+  // onDidInsertElement: on('didInsertElement', function() {
+  //   // let setAttribute = this._setAttribute = this.element.setAttribute;
+  //   // this.element.setAttribute = function() {
+  //   //   return setAttribute.apply(this, arguments);
+  //   // };
+  // }),
 
-  onWillDestroyElement: on('willDestroyElement', function() {
-  }),
+  // onWillDestroyElement: on('willDestroyElement', function() {
+  // }),
 
   geometry: 'primitive: plane; height: 1; width: 1',
   material: 'shader: flat',

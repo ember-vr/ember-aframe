@@ -1,5 +1,5 @@
-import Mixin from 'ember-metal/mixin';
-import set from 'ember-metal/set';
+import Mixin from '@ember/object/mixin';
+import { set } from '@ember/object';
 import AFrame from 'aframe';
 import { task, timeout } from 'ember-concurrency';
 

@@ -1,11 +1,11 @@
-import Controller from 'ember-controller';
+import Controller from '@ember/controller';
 import QueryParamsControllerMixin from 'ember-aframe-camera-extras/mixins/query-params-controller';
-import injectService from 'ember-service/inject';
-import injectController from 'ember-controller/inject';
-import { readOnly } from 'ember-computed';
-import on from 'ember-evented/on';
-import observer from 'ember-metal/observer';
-import get from 'ember-metal/get';
+import { inject as injectService } from '@ember/service';
+import { inject as injectController } from '@ember/controller';
+import { readOnly } from '@ember/object/computed';
+import { on } from '@ember/object/evented';
+import { observer } from '@ember/object';
+import { get } from '@ember/object';
 import { eq, raw } from 'ember-awesome-macros';
 
 // from https://github.com/aframevr/aframe/blob/master/src/constants/index.js#L3
