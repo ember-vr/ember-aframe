@@ -21,7 +21,7 @@ export default ASky.extend(InboundActions, {
   changeMaterialTask: task(function * (src) {
     yield timeout(this.get('dur'));
 
-    this.sendAction('changeMaterial', src);
+    this.get('changeMaterial')(src);
   }),
 
   actions: {

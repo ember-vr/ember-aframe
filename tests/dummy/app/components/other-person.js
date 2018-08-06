@@ -1,15 +1,21 @@
 import AEntity from 'ember-aframe/components/a-entity';
 import stringifyComponent from 'ember-aframe/macros/stringify-component';
 import stringifyCoordinates from 'ember-aframe/macros/stringify-coordinates';
-import { readOnly } from 'ember-computed';
+import { readOnly } from '@ember/object/computed';
 
 export default AEntity.extend({
-  params: {
-    _rx: 0,
-    _ry: 0,
-    _px: 0,
-    _py: 0,
-    _pz: 0
+  init() {
+    this._super(...arguments);
+
+    this.setProperties({
+      params: {
+        _rx: 0,
+        _ry: 0,
+        _px: 0,
+        _py: 0,
+        _pz: 0
+      }
+    });
   },
 
   _rx: readOnly('params._rx'),

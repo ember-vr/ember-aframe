@@ -1,5 +1,5 @@
-import Route from 'ember-route';
-import { scheduleOnce } from 'ember-runloop';
+import Route from '@ember/routing/route';
+import { scheduleOnce } from '@ember/runloop';
 
 export default Route.extend({
   actions: {

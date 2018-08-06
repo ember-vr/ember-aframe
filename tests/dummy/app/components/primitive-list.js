@@ -1,8 +1,8 @@
 /* global requirejs */
 
-import Component from 'ember-component';
-import EmberObject from 'ember-object';
-import get from 'ember-metal/get';
+import Component from '@ember/component';
+import EmberObject from '@ember/object';
+import { get } from '@ember/object';
 import { defaultComponents } from 'ember-aframe/utils/components';
 import { defaultAttributes } from 'ember-aframe/utils/attributes';
 

@@ -1,4 +1,4 @@
-import { helper } from 'ember-helper';
+import { helper } from '@ember/component/helper';
 import stringifyComponent from '../utils/stringify-component';
 
 export default helper(([component], hash) => {
