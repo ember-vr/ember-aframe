@@ -26,11 +26,17 @@ const MyComponent = AEntity.extend(
     'a-text:text'
   ],
 
-  // attributesToObserve: {
-  //   position: {
-  //     // action: 'hover'
-  //   }
-  // },
+  init() {
+    this._super(...arguments);
+
+    this.setProperties({
+      attributesToObserve: {
+        position: {
+          // action: 'hover'
+        }
+      }
+    });
+  },
 
   // onDidInsertElement: on('didInsertElement', function() {
   //   // let setAttribute = this._setAttribute = this.element.setAttribute;
