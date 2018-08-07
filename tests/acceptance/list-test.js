@@ -1,30 +1,25 @@
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import { click, findAll, visit } from '@ember/test-helpers';
+import { module, test } from 'qunit';
+import { setupApplicationTest } from 'ember-qunit';
 import testSelector from 'ember-test-selectors';
 
-moduleForAcceptance('Acceptance | list');
+module('Acceptance | list', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('visiting /list', function(assert) {
-  visit('/list');
+  test('visiting /list', async function(assert) {
+    await visit('/list');
 
-  click(
-    testSelector('default-attributes-header') + ' '
-      + testSelector('pointer')
-  );
+    await click(testSelector('default-attributes-header') + ' '
+      + testSelector('pointer'));
 
-  click(
-    testSelector('default-components-header') + ' '
-      + testSelector('pointer')
-  );
+    await click(testSelector('default-components-header') + ' '
+      + testSelector('pointer'));
 
-  click(
-    testSelector('primitive-list-header') + ' '
-      + testSelector('pointer')
-  );
+    await click(testSelector('primitive-list-header') + ' '
+      + testSelector('pointer'));
 
-  andThen(function() {
-    assert.ok(find(testSelector('default-attribute')).length, 'there are default attributes');
-    assert.ok(find(testSelector('default-component')).length, 'there are default components');
-    assert.ok(find(testSelector('primitive')).length, 'there are primitives');
+    assert.ok(findAll(testSelector('default-attribute')).length, 'there are default attributes');
+    assert.ok(findAll(testSelector('default-component')).length, 'there are default components');
+    assert.ok(findAll(testSelector('primitive')).length, 'there are primitives');
   });
 });
