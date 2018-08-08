@@ -16,5 +16,9 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
+  app.import('node_modules/aframe-animation-component/dist/aframe-animation-component.js');
+  app.import('node_modules/aframe-event-set-component/dist/aframe-event-set-component.js');
+  app.import('node_modules/aframe-layout-component/dist/aframe-layout-component.js');
+
   return app.toTree();
 };
