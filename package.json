@@ -76,10 +76,5 @@
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "demoURL": "https://ember-vr.github.io/ember-aframe"
-  },
-  "greenkeeper": {
-    "ignore": [
-      "jsdom"
-    ]
   }
 }
