@@ -9,9 +9,9 @@ let aframe;
 
 function runAFrame() {
   const dasherize = require('ember-cli-string-utils').dasherize;
-  const jsdom = require('jsdom');
+  const { JSDOM } = require('jsdom');
 
-  let _window = global.window = jsdom.jsdom().defaultView;
+  let _window = global.window = new JSDOM().window;
   global.navigator = _window.navigator;
   global.document = _window.document;
   global.HTMLElement = _window.HTMLElement;
