@@ -31,7 +31,7 @@
     "ember-cli-string-utils": "^1.1.0",
     "ember-concurrency": "^0.8.1",
     "ember-macro-helpers": "^2.0.0",
-    "jsdom": "^9.11.0"
+    "jsdom": "^11.12.0"
   },
   "devDependencies": {
     "aframe-animation-component": "^3.2.5",
