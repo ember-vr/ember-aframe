@@ -1,6 +1,6 @@
 {
   "name": "ember-aframe",
-  "version": "0.0.12",
+  "version": "0.1.0",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "a-frame",
