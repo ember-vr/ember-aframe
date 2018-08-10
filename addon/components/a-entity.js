@@ -32,7 +32,7 @@ export default Component.extend({
 
   _toggleObservers(func) {
     get(this, 'attributeBindings').forEach(attribute => {
-      func(this, attribute.split(':')[0], this, playAfterChange);
+      func(this, attribute.substr(0, attribute.indexOf(':')), this, playAfterChange);
     });
   },
 

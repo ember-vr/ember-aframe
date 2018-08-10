@@ -2,7 +2,7 @@ import AFrame from 'aframe';
 
 const { stringify } = AFrame.utils.coordinates;
 
-export default function() {
+export default function stringifyCoordinates() {
   if (arguments.length === 1) {
     return stringify(arguments[0]);
   }

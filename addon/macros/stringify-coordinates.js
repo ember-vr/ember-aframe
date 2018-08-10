@@ -1,6 +1,4 @@
-import { computed } from 'ember-macro-helpers';
+import { curriedComputed } from 'ember-macro-helpers';
 import stringifyCoordinates from '../utils/stringify-coordinates';
 
-export default function(...coordinates) {
-  return computed(...coordinates, stringifyCoordinates);
-}
+export default curriedComputed(stringifyCoordinates);

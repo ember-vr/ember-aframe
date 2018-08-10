@@ -1,1 +1,1 @@
-export { default, stringifyComponent } from 'ember-aframe/helpers/stringify-component';
+export { default } from 'ember-aframe/helpers/stringify-component';
