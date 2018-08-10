@@ -1,3 +1,7 @@
 import AFrame from 'aframe';
 
-export default AFrame.utils.coordinates.parse;
+const { parse } = AFrame.utils.coordinates;
+
+export default function parseCoordinates() {
+  return parse(...arguments);
+}

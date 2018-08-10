@@ -22,10 +22,10 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "aframe": "^0.7.0",
+    "aframe": "^0.8.2",
     "broccoli-file-creator": "^2.0.0",
     "broccoli-merge-trees": "^3.0.0",
-    "ember-aframe-shim": "^2.1.0",
+    "ember-aframe-shim": "^2.2.0",
     "ember-awesome-macros": "^3.0.0",
     "ember-cli-babel": "^7.1.0",
     "ember-cli-htmlbars": "^3.0.0",
@@ -37,10 +37,10 @@
   "devDependencies": {
     "@ember/optional-features": "^0.7.0",
     "aframe-animation-component": "^3.2.5",
-    "aframe-event-set-component": "^4.0.0",
-    "aframe-layout-component": "^4.0.2",
+    "aframe-event-set-component": "^4.1.2",
+    "aframe-layout-component": "^5.3.0",
     "broccoli-asset-rev": "^3.0.0",
-    "ember-aframe-camera-extras": "^0.3.0",
+    "ember-aframe-camera-extras": "^0.4.0",
     "ember-ajax": "^3.1.0",
     "ember-animejs": "0.0.2",
     "ember-cli": "~3.4.3",
