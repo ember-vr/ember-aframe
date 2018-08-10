@@ -15,6 +15,7 @@ function runAFrame() {
   global.navigator = _window.navigator;
   global.document = _window.document;
   global.HTMLElement = _window.HTMLElement;
+  global.screen = _window.screen;
   // Object.defineProperty(_window, 'WebVRConfig', {
   //   get () {
   //     return global.WebVRConfig;
@@ -45,6 +46,7 @@ function runAFrame() {
   delete global.navigator;
   delete global.document;
   delete global.HTMLElement;
+  delete global.screen;
   // delete global.WebVRConfig;
 }
 
