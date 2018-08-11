@@ -1,4 +1,10 @@
-import { curriedComputed } from 'ember-macro-helpers';
-import stringifyCoordinates from '../utils/stringify-coordinates';
+import { computed } from 'ember-macro-helpers';
+import { hash } from 'ember-awesome-macros';
+import _stringifyCoordinates from '../utils/stringify-coordinates';
 
-export default curriedComputed(stringifyCoordinates);
+export default function stringifyCoordinates(...args) {
+  if (args.length === 1) {
+    args[0] = hash(args[0]);
+  }
+  return computed(...args, _stringifyCoordinates);
+}

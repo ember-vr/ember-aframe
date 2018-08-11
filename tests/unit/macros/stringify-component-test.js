@@ -1,0 +1,19 @@
+import stringifyComponent from 'dummy/macros/stringify-component';
+import { module, test } from 'qunit';
+import { compute } from 'ember-macro-test-helpers';
+
+module('Unit | Macro | stringify component', function() {
+  test('it works', function(assert) {
+    compute({
+      assert,
+      computed: stringifyComponent('animation', {
+        dir: 'dir',
+        dur: 'dur'
+      }),
+      properties: {
+        dir: 'alternate'
+      },
+      strictEqual: 'dir:alternate;dur:undefined'
+    });
+  });
+});
