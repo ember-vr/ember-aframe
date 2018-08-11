@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
-import stringifyCoordinates from '../utils/stringify-coordinates';
+import _stringifyCoordinates from '../utils/stringify-coordinates';
 
-export default helper(params => {
-  return stringifyCoordinates(...params);
+export default helper(function stringifyCoordinates(params) {
+  return _stringifyCoordinates(...params);
 });

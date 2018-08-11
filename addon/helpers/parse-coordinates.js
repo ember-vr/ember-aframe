@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
-import parseCoordinates from '../utils/parse-coordinates';
+import _parseCoordinates from '../utils/parse-coordinates';
 
-export default helper(params => {
-  return parseCoordinates(...params);
+export default helper(function parseCoordinates(params) {
+  return _parseCoordinates(...params);
 });

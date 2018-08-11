@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
-import stringify from 'ember-aframe/utils/stringify';
+import _stringify from 'ember-aframe/utils/stringify';
 
-export default helper((params, hash) => {
-  return stringify(hash);
+export default helper(function stringify(params, hash) {
+  return _stringify(hash);
 });

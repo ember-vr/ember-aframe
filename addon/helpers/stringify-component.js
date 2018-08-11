@@ -1,6 +1,6 @@
 import { helper } from '@ember/component/helper';
-import stringifyComponent from '../utils/stringify-component';
+import _stringifyComponent from '../utils/stringify-component';
 
-export default helper(([component], hash) => {
-  return stringifyComponent(component, hash);
+export default helper(function stringifyComponent([component], hash) {
+  return _stringifyComponent(component, hash);
 });
