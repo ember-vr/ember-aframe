@@ -2,7 +2,7 @@ import AFrame from 'aframe';
 
 const { components } = AFrame;
 
-const conflictedComponents = ['layout'];
+export const conflictedComponents = ['layout'];
 
 function filter(components) {
   return components.filter(c => !conflictedComponents.includes(c));
@@ -11,6 +11,7 @@ function filter(components) {
 const discoveredComponents = Object.keys(components).sort();
 const defaultComponents = filter(discoveredComponents);
 
-export { discoveredComponents };
-export { conflictedComponents };
-export { defaultComponents };
+export {
+  discoveredComponents,
+  defaultComponents
+};
