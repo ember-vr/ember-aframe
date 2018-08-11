@@ -1,4 +1,4 @@
-import stringifyCoordinates from 'dummy/macros/stringify-coordinates';
+import stringifyCoordinates from 'ember-aframe/macros/stringify-coordinates';
 import { module, test } from 'qunit';
 import { compute } from 'ember-macro-test-helpers';
 

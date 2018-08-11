@@ -1,4 +1,4 @@
-import stringifyCoordinates from 'dummy/utils/stringify-coordinates';
+import stringifyCoordinates from 'ember-aframe/utils/stringify-coordinates';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | stringify-coordinates', function() {

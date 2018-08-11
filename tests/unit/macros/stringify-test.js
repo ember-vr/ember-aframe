@@ -1,4 +1,4 @@
-import stringify from 'dummy/macros/stringify';
+import stringify from 'ember-aframe/macros/stringify';
 import { module, test } from 'qunit';
 import { compute } from 'ember-macro-test-helpers';
 

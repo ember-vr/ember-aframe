@@ -1,4 +1,4 @@
-import stringifyComponent from 'dummy/utils/stringify-component';
+import stringifyComponent from 'ember-aframe/utils/stringify-component';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | stringify-component', function() {

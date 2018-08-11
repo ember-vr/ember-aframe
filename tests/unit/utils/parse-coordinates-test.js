@@ -1,4 +1,4 @@
-import parseCoordinates from 'dummy/utils/parse-coordinates';
+import parseCoordinates from 'ember-aframe/utils/parse-coordinates';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | parse-coordinates', function() {

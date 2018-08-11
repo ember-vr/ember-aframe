@@ -1,4 +1,4 @@
-import stringify from 'dummy/utils/stringify';
+import stringify from 'ember-aframe/utils/stringify';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | stringify', function() {

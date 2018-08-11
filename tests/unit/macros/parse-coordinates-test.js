@@ -1,4 +1,4 @@
-import parseCoordinates from 'dummy/macros/parse-coordinates';
+import parseCoordinates from 'ember-aframe/macros/parse-coordinates';
 import { module, test } from 'qunit';
 import { compute } from 'ember-macro-test-helpers';
 
