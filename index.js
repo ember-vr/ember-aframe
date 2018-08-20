@@ -15,14 +15,14 @@ function runAFrame() {
   global.navigator = _window.navigator;
   global.document = _window.document;
   global.HTMLElement = _window.HTMLElement;
-  Object.defineProperty(_window, 'WebVRConfig', {
-    get () {
-      return global.WebVRConfig;
-    },
-    set (WebVRConfig) {
-      global.WebVRConfig = WebVRConfig;
-    }
-  });
+  // Object.defineProperty(_window, 'WebVRConfig', {
+  //   get () {
+  //     return global.WebVRConfig;
+  //   },
+  //   set (WebVRConfig) {
+  //     global.WebVRConfig = WebVRConfig;
+  //   }
+  // });
 
   const primitives = require('aframe/src/extras/primitives/primitives');
 
@@ -42,9 +42,10 @@ function runAFrame() {
   defaultAttributes = JSON.stringify(Object.keys(propertyTypes).map(dasherize));
 
   delete global.window;
+  delete global.navigator;
   delete global.document;
   delete global.HTMLElement;
-  delete global.WebVRConfig;
+  // delete global.WebVRConfig;
 }
 
 module.exports = {
