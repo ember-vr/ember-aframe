@@ -49,7 +49,7 @@ function runAFrame() {
 }
 
 module.exports = {
-  name: 'ember-aframe',
+  name: require('./package').name,
 
   included() {
     runAFrame();
