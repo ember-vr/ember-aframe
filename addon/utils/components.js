@@ -2,7 +2,10 @@ import AFrame from 'aframe';
 
 const { components } = AFrame;
 
-export const conflictedComponents = ['layout'];
+export const conflictedComponents = [
+  'layout',
+  'renderer'
+];
 
 function filter(components) {
   return components.filter(c => !conflictedComponents.includes(c));
