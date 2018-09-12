@@ -54,5 +54,9 @@ before_install:
   - npm install -g npm@6
   - npm --version
 
+install:
+  # https://github.com/ember-cli/ember-try/issues/167
+  - npm install --no-shrinkwrap
+
 script:
   - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
