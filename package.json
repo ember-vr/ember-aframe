@@ -35,7 +35,7 @@
     "jsdom": "^12.0.0"
   },
   "devDependencies": {
-    "@ember/optional-features": "^0.6.3",
+    "@ember/optional-features": "^0.7.0",
     "aframe-animation-component": "^3.2.5",
     "aframe-event-set-component": "^4.0.0",
     "aframe-layout-component": "^4.0.2",
