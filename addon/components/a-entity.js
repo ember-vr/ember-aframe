@@ -26,7 +26,7 @@ export default Component.extend({
   attributeBindings: defaultAttributes.concat(defaultComponents).sort(),
 
   _setUpEvents: task(function * () {
-    yield waitForEvent(this.$(), 'loaded');
+    yield waitForEvent(this.element, 'loaded');
     this.trigger('loaded');
   }).on('didInsertElement'),
 
