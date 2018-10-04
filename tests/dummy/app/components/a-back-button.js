@@ -5,7 +5,7 @@ import AEntity from 'ember-aframe/components/a-entity';
 // import parseCoordinates from 'ember-aframe/utils/parse-coordinates';
 // import stringifyCoordinates from 'ember-aframe/utils/stringify-coordinates';
 // import stringifyComponent from 'ember-aframe/utils/stringify-component';
-import AAttributeObserver from 'ember-aframe/mixins/a-attribute-observer';
+// import AAttributeObserver from 'ember-aframe/mixins/a-attribute-observer';
 import {
   // raw,
   // computed,
@@ -17,7 +17,7 @@ import {
 // const WAIT_HERE_FOREVER = Ember.RSVP.defer().promise;
 
 export default AEntity.extend(
-  AAttributeObserver,
+  // AAttributeObserver,
 {
   classNames: ['link'],
 
