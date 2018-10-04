@@ -16,7 +16,7 @@ import {
 
 // const WAIT_HERE_FOREVER = Ember.RSVP.defer().promise;
 
-const MyComponent = AEntity.extend(
+export default AEntity.extend(
   AAttributeObserver,
 {
   classNames: ['link'],
@@ -124,10 +124,6 @@ const MyComponent = AEntity.extend(
   //     this.get('hover').perform(position);
   //   }
   // }
-});
-
-MyComponent.reopenClass({
+}).reopenClass({
   positionalParams: ['text']
 });
-
-export default MyComponent;
