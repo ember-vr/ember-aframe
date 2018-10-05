@@ -19,6 +19,8 @@ export default ASky.extend(InboundActions, {
   }),
 
   changeMaterialTask: task(function * (src) {
+    this.element.emit('set-image-fade');
+
     yield timeout(this.get('dur'));
 
     this.get('changeMaterial')(src);
@@ -26,8 +28,6 @@ export default ASky.extend(InboundActions, {
 
   actions: {
     startChangingMaterial(src) {
-      this.element.emit('set-image-fade');
-
       this.get('changeMaterialTask').perform(src);
     }
   }
