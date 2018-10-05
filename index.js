@@ -8,7 +8,7 @@ let defaultAttributes;
 let aframe;
 
 function runAFrame() {
-  const dasherize = require('ember-cli-string-utils').dasherize;
+  const { dasherize } = require('ember-cli-string-utils');
   const { JSDOM } = require('jsdom');
 
   let _window = global.window = new JSDOM().window;
@@ -26,7 +26,7 @@ function runAFrame() {
 
   const primitives = require('aframe/src/extras/primitives/primitives');
 
-  const registerPrimitive = primitives.registerPrimitive;
+  const { registerPrimitive } = primitives;
 
   primitives.registerPrimitive = function(name, definition) {
     primitiveDefinitions[name] = definition;
@@ -37,7 +37,7 @@ function runAFrame() {
 
   primitives.registerPrimitive = registerPrimitive;
 
-  const propertyTypes = require('aframe/src/core/propertyTypes').propertyTypes;
+  const { propertyTypes } = require('aframe/src/core/propertyTypes');
 
   defaultAttributes = JSON.stringify(Object.keys(propertyTypes).map(dasherize));
 
@@ -79,7 +79,7 @@ module.exports = {
       //     }
       //   }
       // }
-      let mappings = definition.mappings;
+      let { mappings } = definition;
       if (mappings) {
         attributeBindings = Object.keys(mappings).sort();
       }
