@@ -16,6 +16,7 @@
 /.travis.yml
 /.watchmanconfig
 /bower.json
+/config/dependency-lint.js
 /config/ember-try.js
 /ember-cli-build.js
 /testem.js
