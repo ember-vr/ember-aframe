@@ -13,6 +13,6 @@ module('Integration | Helper | parse-coordinates', function(hooks) {
       {{/with}}
     `);
 
-    assert.equal(this.element.textContent.trim(), '1.2 3.4 5.6');
+    assert.dom(this.element).hasText('1.2 3.4 5.6');
   });
 });

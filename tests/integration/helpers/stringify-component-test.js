@@ -14,6 +14,6 @@ module('Integration | Helper | stringify-component', function(hooks) {
       }}
     `);
 
-    assert.equal(this.element.textContent.trim(), 'dir:alternate;dur:undefined');
+    assert.dom(this.element).hasText('dir:alternate;dur:undefined');
   });
 });
