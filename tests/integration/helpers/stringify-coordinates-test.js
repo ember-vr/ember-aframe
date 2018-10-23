@@ -9,7 +9,7 @@ module('Integration | Helper | stringify-coordinates', function(hooks) {
   test('it handles params', async function(assert) {
     await render(hbs`{{stringify-coordinates "1.2" "3.4" "5.6"}}`);
 
-    assert.equal(this.element.textContent.trim(), '1.2 3.4 5.6');
+    assert.dom(this.element).hasText('1.2 3.4 5.6');
   });
 
   test('it handles object', async function(assert) {
@@ -21,6 +21,6 @@ module('Integration | Helper | stringify-coordinates', function(hooks) {
       )}}
     `);
 
-    assert.equal(this.element.textContent.trim(), '1.2 3.4 5.6');
+    assert.dom(this.element).hasText('1.2 3.4 5.6');
   });
 });
