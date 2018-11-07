@@ -48,7 +48,7 @@
     "ember-cli-dependency-lint": "^1.0.3",
     "ember-cli-eslint": "^5.0.0",
     "ember-cli-github-pages": "0.2.1",
-    "ember-cli-htmlbars-inline-precompile": "^1.0.3",
+    "ember-cli-htmlbars-inline-precompile": "^2.0.0",
     "ember-cli-inject-live-reload": "^2.0.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-template-lint": "^1.0.0-beta.1",
