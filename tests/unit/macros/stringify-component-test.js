@@ -1,6 +1,6 @@
 import stringifyComponent from 'ember-aframe/macros/stringify-component';
 import { module, test } from 'qunit';
-import { compute } from 'ember-macro-test-helpers';
+import { compute } from 'ember-macro-helpers/test-support';
 
 module('Unit | Macro | stringify component', function() {
   test('it works', function(assert) {

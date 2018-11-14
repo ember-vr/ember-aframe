@@ -1,6 +1,6 @@
 import stringifyCoordinates from 'ember-aframe/macros/stringify-coordinates';
 import { module, test } from 'qunit';
-import { compute } from 'ember-macro-test-helpers';
+import { compute } from 'ember-macro-helpers/test-support';
 
 module('Unit | Macro | stringify coordinates', function() {
   test('it handles params', function(assert) {
