@@ -22,7 +22,7 @@ export default Controller.extend(QueryParamsControllerMixin, {
 
   otherPeople: readOnly('people.otherPeople'),
 
-  updateRoute: on('init', observer('currentRouteName', function() {
+  updateRoute: on('init', observer('currentRouteName', function() { // eslint-disable-line ember/no-observers
     let currentRouteName = get(this, 'currentRouteName');
     if (!currentRouteName) {
       return;
