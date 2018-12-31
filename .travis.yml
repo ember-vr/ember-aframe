@@ -10,11 +10,6 @@ sudo: false
 addons:
   firefox: latest
 
-branches:
-  only:
-    - master
-    - /^greenkeeper\/.*$/
-
 cache:
   directories:
     - $HOME/.npm
@@ -27,9 +22,9 @@ env:
 branches:
   only:
     - master
-    - /^greenkeeper\/.*$/
     # npm version tags
     - /^v\d+\.\d+\.\d+/
+    - /^greenkeeper\/.*$/
 
 jobs:
   fail_fast: true
