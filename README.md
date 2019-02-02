@@ -6,6 +6,14 @@ ember-aframe
 [![Build Status](https://travis-ci.org/ember-vr/ember-aframe.svg?branch=master)](https://travis-ci.org/ember-vr/ember-aframe)
 [![Ember Version](https://img.shields.io/badge/ember-2.16%2B-brightgreen.svg)](https://www.emberjs.com/)
 
+
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v2.18 or above
+* Ember CLI v2.13 or above
+
+
 Installation
 ------------------------------------------------------------------------------
 
