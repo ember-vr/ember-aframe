@@ -5,6 +5,7 @@ ember-aframe
 [![npm version](https://badge.fury.io/js/ember-aframe.svg)](https://badge.fury.io/js/ember-aframe)
 [![Build Status](https://travis-ci.org/ember-vr/ember-aframe.svg?branch=master)](https://travis-ci.org/ember-vr/ember-aframe)
 [![Ember Version](https://img.shields.io/badge/ember-2.16%2B-brightgreen.svg)](https://www.emberjs.com/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/30380f17-b129-4ccd-9cff-d204b0ad9a06/deploy-status)](https://app.netlify.com/sites/ember-aframe/deploys)
 
 
 Compatibility
@@ -25,6 +26,8 @@ ember install ember-aframe
 
 Usage
 ------------------------------------------------------------------------------
+
+[Demo](https://ember-aframe.netlify.com)
 
 [![ember-aframe](http://img.youtube.com/vi/I3o3lV_yfIE/0.jpg)](https://www.youtube.com/watch?v=I3o3lV_yfIE)
 
