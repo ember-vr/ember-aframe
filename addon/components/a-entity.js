@@ -1,17 +1,17 @@
 import Component from '@ember/component';
 import { get } from '@ember/object';
-import { scheduleOnce } from '@ember/runloop';
+// import { scheduleOnce } from '@ember/runloop';
 import { addObserver, removeObserver } from '@ember/object/observers';
 import { task, waitForEvent } from 'ember-concurrency';
 import { defaultAttributes } from '../utils/attributes';
 import { defaultComponents } from '../utils/components';
 
 function playAfterChange() {
-  scheduleOnce('afterRender', () => {
-    // let { element } = this;
-    // element.pause();
-    // element.play();
-  });
+  // scheduleOnce('afterRender', () => {
+  //   let { element } = this;
+  //   element.pause();
+  //   element.play();
+  // });
 }
 
 export default Component.extend({
