@@ -1,18 +1,18 @@
 import Component from '@ember/component';
-import { get } from '@ember/object';
+// import { get } from '@ember/object';
 // import { scheduleOnce } from '@ember/runloop';
-import { addObserver, removeObserver } from '@ember/object/observers';
+// import { addObserver, removeObserver } from '@ember/object/observers';
 import { task, waitForEvent } from 'ember-concurrency';
 import { defaultAttributes } from '../utils/attributes';
 import { defaultComponents } from '../utils/components';
 
-function playAfterChange() {
-  // scheduleOnce('afterRender', () => {
-  //   let { element } = this;
-  //   element.pause();
-  //   element.play();
-  // });
-}
+// function playAfterChange() {
+//   scheduleOnce('afterRender', () => {
+//     let { element } = this;
+//     element.pause();
+//     element.play();
+//   });
+// }
 
 export default Component.extend({
   tagName: 'a-entity',
@@ -30,21 +30,21 @@ export default Component.extend({
     this.trigger('loaded');
   }).on('didInsertElement'),
 
-  _toggleObservers(func) {
-    get(this, 'attributeBindings').forEach(attribute => {
-      func(this, attribute.substr(0, attribute.indexOf(':')), this, playAfterChange);
-    });
-  },
+  // _toggleObservers(func) {
+  //   get(this, 'attributeBindings').forEach(attribute => {
+  //     func(this, attribute.substr(0, attribute.indexOf(':')), this, playAfterChange);
+  //   });
+  // },
 
-  didInsertElement() {
-    this._super(...arguments);
+  // didInsertElement() {
+  //   this._super(...arguments);
 
-    this._toggleObservers(addObserver);
-  },
+  //   this._toggleObservers(addObserver);
+  // },
 
-  willDestroyElement() {
-    this._super(...arguments);
+  // willDestroyElement() {
+  //   this._super(...arguments);
 
-    this._toggleObservers(removeObserver);
-  }
+  //   this._toggleObservers(removeObserver);
+  // }
 });
