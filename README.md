@@ -30,6 +30,12 @@ Usage
 [![ember-aframe](http://img.youtube.com/vi/I3o3lV_yfIE/0.jpg)](https://www.youtube.com/watch?v=I3o3lV_yfIE)
 
 
+Contributing
+------------------------------------------------------------------------------
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
 License
 ------------------------------------------------------------------------------
 
