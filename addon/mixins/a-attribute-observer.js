@@ -1,3 +1,4 @@
+/* eslint-disable ember/no-new-mixins */
 import Mixin from '@ember/object/mixin';
 import { set } from '@ember/object';
 import AFrame from 'aframe';
