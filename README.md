@@ -26,8 +26,6 @@ ember install ember-aframe
 Usage
 ------------------------------------------------------------------------------
 
-[Demo](https://ember-vr.github.io/ember-aframe)
-
 [![ember-aframe](http://img.youtube.com/vi/I3o3lV_yfIE/0.jpg)](https://www.youtube.com/watch?v=I3o3lV_yfIE)
 
 
