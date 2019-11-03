@@ -16,6 +16,12 @@ export default Controller.extend(QueryParamsControllerMixin, {
   people: injectService(),
   application: injectController(),
 
+  queryParams: {
+    _multiplayer: 'multiplayer'
+  },
+
+  _multiplayer: true,
+
   currentRouteName: readOnly('application.currentRouteName'),
 
   shouldHideBackButton: eq('currentRouteName', raw('vr.index')),
@@ -28,12 +34,16 @@ export default Controller.extend(QueryParamsControllerMixin, {
       return;
     }
 
-    get(this, 'people').updateRoute(currentRouteName);
+    if (this._multiplayer) {
+      get(this, 'people').updateRoute(currentRouteName);
+    }
   })),
 
   actions: {
     sendData(params) {
-      get(this, 'people').updateLocation(params);
+      if (this._multiplayer) {
+        get(this, 'people').updateLocation(params);
+      }
     }
   }
 });
