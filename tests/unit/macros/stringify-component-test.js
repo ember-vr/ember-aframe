@@ -13,7 +13,7 @@ module('Unit | Macro | stringify component', function() {
       properties: {
         dir: 'alternate'
       },
-      strictEqual: 'dir:alternate;dur:undefined'
+      strictEqual: 'dir: alternate; dur: undefined'
     });
   });
 });
