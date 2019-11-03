@@ -32,7 +32,7 @@
     "ember-cli-string-utils": "^1.1.0",
     "ember-concurrency": "^0.10.0",
     "ember-macro-helpers": "^4.2.2",
-    "jsdom": "^13.0.0"
+    "jsdom": "^15.0.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^1.0.0",
