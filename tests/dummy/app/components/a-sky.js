@@ -15,7 +15,11 @@ export default ASky.extend(InboundActions, {
     dir: raw('alternate'),
     dur: 'dur',
     from: raw('#FFF'),
-    to: raw('#000')
+    to: raw('#000'),
+
+    // regressed 3.2.5 => 4.0.0-beta1
+    // https://github.com/supermedium/superframe/issues/192
+    loop: 1
   }),
 
   changeMaterialTask: task(function * (src) {
