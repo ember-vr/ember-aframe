@@ -1,7 +1,6 @@
 ember-aframe
 ==============================================================================
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/ember-vr/ember-aframe.svg)](https://greenkeeper.io/)
 [![npm version](https://badge.fury.io/js/ember-aframe.svg)](https://badge.fury.io/js/ember-aframe)
 [![Build Status](https://travis-ci.org/ember-vr/ember-aframe.svg?branch=master)](https://travis-ci.org/ember-vr/ember-aframe)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/30380f17-b129-4ccd-9cff-d204b0ad9a06/deploy-status)](https://app.netlify.com/sites/ember-aframe/deploys)
