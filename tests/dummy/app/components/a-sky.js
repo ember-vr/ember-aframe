@@ -5,6 +5,8 @@ import { task, timeout } from 'ember-concurrency';
 import InboundActions from 'ember-component-inbound-actions/inbound-actions';
 
 export default ASky.extend(InboundActions, {
+  'data-test-a-sky': '',
+
   attributeBindings: [
     'animation__fade'
   ],

@@ -13,12 +13,15 @@ import {
   tag,
   toString
 } from 'ember-awesome-macros';
+import { readOnly } from '@ember/object/computed';
 
 // const WAIT_HERE_FOREVER = Ember.RSVP.defer().promise;
 
 export default AEntity.extend(
   // AAttributeObserver,
 {
+  'data-test-a-back-button': readOnly('text'),
+
   classNames: ['link'],
 
   attributeBindings: [
