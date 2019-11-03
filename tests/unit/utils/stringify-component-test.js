@@ -8,6 +8,6 @@ module('Unit | Utility | stringify-component', function() {
       dur: undefined
     });
 
-    assert.strictEqual(result, 'dir:alternate;dur:undefined');
+    assert.strictEqual(result, 'dir: alternate; dur: undefined');
   });
 });

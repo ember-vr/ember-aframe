@@ -22,7 +22,7 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "aframe": "^0.8.2",
+    "aframe": "^0.9.2",
     "broccoli-file-creator": "^2.0.0",
     "broccoli-merge-trees": "^3.0.0",
     "ember-aframe-shim": "^2.3.1",
@@ -36,7 +36,6 @@
   },
   "devDependencies": {
     "@ember/optional-features": "^1.0.0",
-    "aframe-animation-component": "^5.0.0",
     "aframe-event-set-component": "^5.0.0",
     "aframe-layout-component": "^5.3.0",
     "babel-eslint": "^10.0.3",
