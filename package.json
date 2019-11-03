@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@ember/optional-features": "^1.0.0",
-    "aframe-animation-component": "^3.2.5",
+    "aframe-animation-component": "^5.0.0",
     "aframe-event-set-component": "^5.0.0",
     "aframe-layout-component": "^5.3.0",
     "babel-eslint": "^10.0.3",
