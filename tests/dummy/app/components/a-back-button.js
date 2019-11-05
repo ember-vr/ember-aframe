@@ -7,13 +7,14 @@ import AEntity from 'ember-aframe/components/a-entity';
 // import stringifyComponent from 'ember-aframe/utils/stringify-component';
 // import AAttributeObserver from 'ember-aframe/mixins/a-attribute-observer';
 import {
-  // raw,
+  raw,
   // computed,
   not,
-  tag,
   toString
 } from 'ember-awesome-macros';
 import { readOnly } from '@ember/object/computed';
+import stringify from 'ember-aframe/macros/stringify';
+import stringifyComponent from 'ember-aframe/macros/stringify-component';
 
 // const WAIT_HERE_FOREVER = Ember.RSVP.defer().promise;
 
@@ -51,17 +52,28 @@ export default AEntity.extend(
   // onWillDestroyElement: on('willDestroyElement', function() {
   // }),
 
-  geometry: 'primitive: plane; height: 1; width: 1',
-  material: 'shader: flat',
+  geometry: stringifyComponent('geometry', {
+    primitive: raw('plane'),
+    height: 1,
+    width: 1
+  }),
+  material: stringifyComponent('material', {
+    shader: raw('flat')
+  }),
   visible: toString(not('shouldHide')),
-  'a-text': tag`value: ${'text'}; width: 4; color: black; align: center`,
+  'a-text': stringify({
+    value: 'text',
+    width: 4,
+    color: raw('black'),
+    align: raw('center')
+  }),
 
   // animation__hover: stringifyComponent('animation', {
-  //   property: 'position',
-  //   dir: 'alternate',
+  //   property: raw('position'),
+  //   dir: raw('alternate'),
   //   loop: true,
-  //   from: '0 -.5 0',
-  //   to: '0 .5 0'
+  //   from: stringifyCoordinates(0, -.5, 0),
+  //   to: stringifyCoordinates(0, .5, 0)
   // }),
 
   // animation__hover: computed('position', position => {
