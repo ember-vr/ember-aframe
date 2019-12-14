@@ -16,7 +16,7 @@
     },
     {
       "name": "ember-aframe-shim",
-      "version": "2.3.1",
+      "version": "2.5.0",
       "blueprints": [
         {
           "name": "ember-aframe-shim"
