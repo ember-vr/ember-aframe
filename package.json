@@ -22,10 +22,10 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "aframe": "^0.9.2",
+    "aframe": "^1.0.0",
     "broccoli-file-creator": "^2.0.0",
     "broccoli-merge-trees": "^3.0.0",
-    "ember-aframe-shim": "^2.6.4",
+    "ember-aframe-shim": "^2.6.6",
     "ember-awesome-macros": "^5.0.1",
     "ember-cli-babel": "^7.11.1",
     "ember-cli-htmlbars": "^4.0.5",
