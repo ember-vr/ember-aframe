@@ -22,6 +22,15 @@
           "name": "ember-aframe-shim"
         }
       ]
+    },
+    {
+      "name": "ember-cli-dependency-lint",
+      "version": "1.0.3",
+      "blueprints": [
+        {
+          "name": "ember-cli-dependency-lint"
+        }
+      ]
     }
   ]
 }
