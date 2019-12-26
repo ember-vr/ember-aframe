@@ -57,6 +57,8 @@ module.exports = {
         // add your custom rules and overrides for node files here
       })
     },
+
+    // vendor files
     {
       files: ['vendor/**/*.js'],
       parserOptions: {
