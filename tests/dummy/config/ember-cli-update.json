@@ -34,7 +34,7 @@
     },
     {
       "name": "ember-extra-blueprint",
-      "version": "0.0.10",
+      "version": "0.0.11",
       "blueprints": [
         {
           "name": "ember-extra-blueprint"
