@@ -17,6 +17,15 @@
       ]
     },
     {
+      "name": "ember-extra-blueprint",
+      "version": "0.0.11",
+      "blueprints": [
+        {
+          "name": "ember-extra-blueprint"
+        }
+      ]
+    },
+    {
       "name": "ember-aframe-shim",
       "version": "2.6.6",
       "blueprints": [
@@ -31,15 +40,6 @@
       "blueprints": [
         {
           "name": "ember-cli-dependency-lint"
-        }
-      ]
-    },
-    {
-      "name": "ember-extra-blueprint",
-      "version": "0.0.11",
-      "blueprints": [
-        {
-          "name": "ember-extra-blueprint"
         }
       ]
     }
