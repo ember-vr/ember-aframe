@@ -2,7 +2,7 @@
   header=(component "toggle-list-header"
     shouldHideToggle=@shouldHideToggle
     isExpanded=this.isExpanded
-    toggle=(action (mut this.isExpanded))
+    toggle=(fn (mut this.isExpanded))
   )
   body=(component "toggle-list-body"
     isExpanded=this.isExpanded
