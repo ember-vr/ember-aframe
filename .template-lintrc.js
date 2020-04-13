@@ -1,11 +1,10 @@
 'use strict';
 
 module.exports = {
-  extends: 'recommended',
+  extends: 'octane',
 
   rules: {
-    'img-alt-attributes': false,
-    'no-curly-component-invocation': true,
-    'no-implicit-this': true
+    'require-valid-alt-text': false,
+    'no-action': false
   }
 };
