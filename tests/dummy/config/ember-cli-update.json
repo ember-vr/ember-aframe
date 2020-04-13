@@ -26,6 +26,15 @@
       ]
     },
     {
+      "name": "@kellyselden/ember-blueprint",
+      "version": "1.1.2",
+      "blueprints": [
+        {
+          "name": "@kellyselden/ember-blueprint"
+        }
+      ]
+    },
+    {
       "name": "ember-aframe-shim",
       "version": "2.6.6",
       "blueprints": [
