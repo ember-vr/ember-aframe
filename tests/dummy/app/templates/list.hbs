@@ -1,11 +1,11 @@
 <div>
-  {{link-to "go back" "index"}}
+  <LinkTo @route="index">go back</LinkTo>
 </div>
 
 <h2>
   A-Frame version: {{aframe.version}}
 </h2>
 
-{{default-attributes}}
-{{default-components}}
-{{primitive-list}}
+<DefaultAttributes />
+<DefaultComponents />
+<PrimitiveList />
