@@ -10,7 +10,7 @@
 </a-assets>
 
 <ASky @id="image-360" @radius="10" @src={{this.skySrc}} @dur={{this.dur}}
-  @actionReceiver={{this.sky}} @changeMaterial={{action "changeMaterial"}} />
+  @actionReceiver={{this.sky}} @changeMaterial={{fn this.actions.changeMaterial}} />
 
 <a-entity layout="type: line; margin: 1.5" position="-1.5 1.5 -4">
   <ALink @thumb="#cubes-thumb" @src="#cubes" @dur={{this.dur}}
