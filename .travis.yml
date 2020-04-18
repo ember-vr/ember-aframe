@@ -72,7 +72,7 @@ jobs:
         edge: true # opt in to dpl v2
         on:
           tags: true
-          repo:
+          repo: ember-vr/ember-aframe
 
 script:
   - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
