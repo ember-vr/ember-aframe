@@ -8,7 +8,7 @@
   </h2>
   <Components.body>
     {{!-- https://github.com/emberjs/ember.js/issues/18881 --}}
-    {{#each components as |_component|}}
+    {{#each this.components as |_component|}}
       <ToggleList
         @data-test-primitive={{_component.tagName}}
         @shouldHideToggle={{_component.shouldHideToggle}}

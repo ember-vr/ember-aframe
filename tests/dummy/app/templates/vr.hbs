@@ -28,7 +28,7 @@
     >
       <ABackButton
         @text="Home"
-        @shouldHide={{shouldHideBackButton}}
+        @shouldHide={{this.shouldHideBackButton}}
         @click={{transition-to "vr"}}
       />
       <ABackButton
@@ -42,7 +42,7 @@
     </a-entity>
   </AEntity>
 
-  {{#each otherPeople as |person|}}
+  {{#each this.otherPeople as |person|}}
     <OtherPerson
       @obj="#headObj"
       @mtl="#headMtl"
@@ -51,7 +51,7 @@
   {{/each}}
 
   <MyCamera
-    @cameraQueryParams={{cameraQueryParams}}
+    @cameraQueryParams={{this.cameraQueryParams}}
     @intervals={{hash
       cameraMoveSlow=(hash interval=1000 adjustHeight=true)
       cameraMoveFast=(hash interval=10)
