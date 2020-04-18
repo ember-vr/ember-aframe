@@ -1,10 +1,10 @@
 {{yield (hash
   header=(component "toggle-list-header"
-    shouldHideToggle=shouldHideToggle
-    isExpanded=isExpanded
-    toggle=(action (mut isExpanded))
+    shouldHideToggle=@shouldHideToggle
+    isExpanded=this.isExpanded
+    toggle=(action (mut this.isExpanded))
   )
   body=(component "toggle-list-body"
-    isExpanded=isExpanded
+    isExpanded=this.isExpanded
   )
 )}}

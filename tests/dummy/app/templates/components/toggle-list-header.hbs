@@ -1,6 +1,6 @@
-{{#unless shouldHideToggle}}
-  <span data-test-pointer class="toggle" role="button" {{action "toggle" isExpanded}}>
-    {{#if isExpanded}}
+{{#unless @shouldHideToggle}}
+  <span data-test-pointer class="toggle" role="button" {{action "toggle" @isExpanded}}>
+    {{#if @isExpanded}}
       &#8863;
     {{else}}
       &#8862;
