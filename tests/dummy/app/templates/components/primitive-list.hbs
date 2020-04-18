@@ -7,21 +7,22 @@
     {{/_components.header}}
   </h2>
   {{#_components.body}}
-    {{#each components as |component|}}
+    {{!-- https://github.com/emberjs/ember.js/issues/18881 --}}
+    {{#each components as |_component|}}
       {{#toggle-list
-        data-test-primitive=component.tagName
-        shouldHideToggle=component.shouldHideToggle
+        data-test-primitive=_component.tagName
+        shouldHideToggle=_component.shouldHideToggle
         as |components|
       }}
         {{#components.header}}
-          {{component.tagName}}
+          {{_component.tagName}}
         {{/components.header}}
         {{#components.body}}
           <div>
             Non-default attributes
           </div>
           <ul>
-            {{#each component.nonDefaultAttributeBindings as |attribute|}}
+            {{#each _component.nonDefaultAttributeBindings as |attribute|}}
               <li>
                 {{attribute}}
               </li>
