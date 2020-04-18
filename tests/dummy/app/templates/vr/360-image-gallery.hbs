@@ -9,14 +9,14 @@
   <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
 </a-assets>
 
-{{a-sky id="image-360" radius="10" src=skySrc dur=dur
-  actionReceiver=sky changeMaterial=(action "changeMaterial")}}
+<ASky @id="image-360" @radius="10" @src={{skySrc}} @dur={{dur}}
+  @actionReceiver={{sky}} @changeMaterial={{action "changeMaterial"}} />
 
 <a-entity layout="type: line; margin: 1.5" position="-1.5 1.5 -4">
-  {{a-link thumb="#cubes-thumb" src="#cubes" dur=dur
-    click=(send sky "startChangingMaterial" "#cubes")}}
-  {{a-link thumb="#city-thumb" src="#city" dur=dur
-    click=(send sky "startChangingMaterial" "#city")}}
-  {{a-link thumb="#sechelt-thumb" src="#sechelt" dur=dur
-    click=(send sky "startChangingMaterial" "#sechelt")}}
+  <ALink @thumb="#cubes-thumb" @src="#cubes" @dur={{dur}}
+    @click={{send sky "startChangingMaterial" "#cubes"}} />
+  <ALink @thumb="#city-thumb" @src="#city" @dur={{dur}}
+    @click={{send sky "startChangingMaterial" "#city"}} />
+  <ALink @thumb="#sechelt-thumb" @src="#sechelt" @dur={{dur}}
+    @click={{send sky "startChangingMaterial" "#sechelt"}} />
 </a-entity>

@@ -1,23 +1,23 @@
-{{#toggle-list
-  as |_components|
-}}
+<ToggleList
+  as |Components|
+>
   <h2 data-test-primitive-list-header>
-    {{#_components.header}}
+    <Components.header>
       A-Frame primitives (Ember Components)
-    {{/_components.header}}
+    </Components.header>
   </h2>
-  {{#_components.body}}
+  <Components.body>
     {{!-- https://github.com/emberjs/ember.js/issues/18881 --}}
     {{#each components as |_component|}}
-      {{#toggle-list
-        data-test-primitive=_component.tagName
-        shouldHideToggle=_component.shouldHideToggle
-        as |components|
-      }}
-        {{#components.header}}
+      <ToggleList
+        @data-test-primitive={{_component.tagName}}
+        @shouldHideToggle={{_component.shouldHideToggle}}
+        as |Components|
+      >
+        <Components.header>
           {{_component.tagName}}
-        {{/components.header}}
-        {{#components.body}}
+        </Components.header>
+        <Components.body>
           <div>
             Non-default attributes
           </div>
@@ -28,8 +28,8 @@
               </li>
             {{/each}}
           </ul>
-        {{/components.body}}
-      {{/toggle-list}}
+        </Components.body>
+      </ToggleList>
     {{/each}}
-  {{/_components.body}}
-{{/toggle-list}}
+  </Components.body>
+</ToggleList>

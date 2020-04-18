@@ -1,10 +1,10 @@
-{{#toggle-list as |components|}}
+<ToggleList as |Components|>
   <h2 data-test-default-components-header>
-    {{#components.header}}
+    <Components.header>
       Default A-Frame Components (Ember Bound Attributes)
-    {{/components.header}}
+    </Components.header>
   </h2>
-  {{#components.body}}
+  <Components.body>
     <ul>
       {{#each defaultComponents as |component|}}
         <li data-test-default-component>
@@ -12,5 +12,5 @@
         </li>
       {{/each}}
     </ul>
-  {{/components.body}}
-{{/toggle-list}}
+  </Components.body>
+</ToggleList>

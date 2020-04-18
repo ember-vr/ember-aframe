@@ -6,12 +6,12 @@
 
   {{outlet}}
 
-  {{#a-entity position="-1.5 3 -4"}}
-    {{a-back-button
-      "Exit VR"
-      position="1.5 1.5 0"
-      click=(transition-to "index")
-    }}
+  <AEntity @position="-1.5 3 -4">
+    <ABackButton
+      @text="Exit VR"
+      @position="1.5 1.5 0"
+      @click={{transition-to "index"}}
+    />
     <a-entity
       layout="
         type: line;
@@ -26,37 +26,37 @@
         to: 0 -.25 0
       "
     >
-      {{a-back-button
-        "Home"
-        shouldHide=shouldHideBackButton
-        click=(transition-to "vr")
-      }}
-      {{a-back-button
-        "Hello World"
-        click=(transition-to "vr.hello-world")
-      }}
-      {{a-back-button
-        "360 Image Gallery"
-        click=(transition-to "vr.360-image-gallery")
-      }}
+      <ABackButton
+        @text="Home"
+        @shouldHide={{shouldHideBackButton}}
+        @click={{transition-to "vr"}}
+      />
+      <ABackButton
+        @text="Hello World"
+        @click={{transition-to "vr.hello-world"}}
+      />
+      <ABackButton
+        @text="360 Image Gallery"
+        @click={{transition-to "vr.360-image-gallery"}}
+      />
     </a-entity>
-  {{/a-entity}}
+  </AEntity>
 
   {{#each otherPeople as |person|}}
-    {{other-person
-      obj="#headObj"
-      mtl="#headMtl"
-      params=person.params
-    }}
+    <OtherPerson
+      @obj="#headObj"
+      @mtl="#headMtl"
+      @params={{person.params}}
+    />
   {{/each}}
 
-  {{my-camera
-    cameraQueryParams=cameraQueryParams
-    intervals=(hash
+  <MyCamera
+    @cameraQueryParams={{cameraQueryParams}}
+    @intervals={{hash
       cameraMoveSlow=(hash interval=1000 adjustHeight=true)
       cameraMoveFast=(hash interval=10)
-    )
-    cameraMoveSlow=(action "updateCameraQueryParams")
-    cameraMoveFast=(action "sendData")
-  }}
+    }}
+    @cameraMoveSlow={{action "updateCameraQueryParams"}}
+    @cameraMoveFast={{action "sendData"}}
+  />
 </a-scene>
