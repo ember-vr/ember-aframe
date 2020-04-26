@@ -63,7 +63,7 @@
     "ember-test-selectors": "^3.0.0",
     "ember-transition-helper": "1.0.0",
     "ember-try": "^1.2.1",
-    "eslint-plugin-ember": "^7.1.0",
+    "eslint-plugin-ember": "^7.13.0",
     "eslint-plugin-node": "^11.0.0",
     "loader.js": "^4.7.0",
     "qunit-dom": "^0.9.0",
