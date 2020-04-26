@@ -5,6 +5,7 @@ module.exports = {
 
   rules: {
     'img-alt-attributes': false,
-    'no-curly-component-invocation': true
+    'no-curly-component-invocation': true,
+    'no-implicit-this': true
   }
 };
