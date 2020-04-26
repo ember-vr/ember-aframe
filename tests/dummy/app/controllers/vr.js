@@ -3,7 +3,7 @@ import QueryParamsControllerMixin from 'ember-aframe-camera-extras/mixins/query-
 import { inject as injectService } from '@ember/service';
 import { readOnly } from '@ember/object/computed';
 import { on } from '@ember/object/evented';
-import { observer } from '@ember/object';
+import { observer } from '@ember/object'; // eslint-disable-line ember/no-observers
 import { get } from '@ember/object';
 import { eq, raw } from 'ember-awesome-macros';
 
