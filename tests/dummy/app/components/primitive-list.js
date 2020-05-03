@@ -15,7 +15,7 @@ export default Component.extend({
       return module.indexOf(`${modulePrefix}a-`) === 0;
     });
 
-    this.set('components', componentModules.map(componentModule => {
+    this.components = componentModules.map(componentModule => {
       let componentDefinition = requirejs(componentModule).default;
       let { attributeBindings } = componentDefinition.create({
         renderer: {}
@@ -28,6 +28,6 @@ export default Component.extend({
         nonDefaultAttributeBindings,
         shouldHideToggle: !nonDefaultAttributeBindings.length
       });
-    }));
+    });
   }
 });

@@ -121,7 +121,7 @@ export default AEntity.extend(
   //     easing: 'easeInOutSine',
   //     update() {
   //       Ember.run(() => {
-  //         self.set('position', this.targets.position);
+  //         self.position = this.targets.position;
   //       });
   //     },
   //     loop: true
