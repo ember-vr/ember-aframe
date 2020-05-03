@@ -1,5 +1,4 @@
 import Mixin from '@ember/object/mixin';
-import { set } from '@ember/object';
 import AFrame from 'aframe';
 import { task, timeout } from 'ember-concurrency';
 
@@ -33,7 +32,7 @@ export default Mixin.create({
   _iterateAttributes() {
     let triggeredList = this._triggeredList;
     if (triggeredList === undefined) {
-      triggeredList = this.set('_triggeredList', []);
+      triggeredList = this._triggeredList = [];
     }
     let attributes = this.attributesToObserve;
     let isDone = true;
@@ -52,7 +51,7 @@ export default Mixin.create({
           this.notifyPropertyChange(attribute);
         } else if (AFrame.components[attribute]) {
           // this[attribute] = AFrame.components[attribute].schema.stringify(value);
-          set(this, attribute, AFrame.components[attribute].schema.stringify(value));
+          this[attribute] = AFrame.components[attribute].schema.stringify(value);
           this.notifyPropertyChange(attribute);
         }
         triggeredList.push(attribute);

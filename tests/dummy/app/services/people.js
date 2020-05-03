@@ -17,7 +17,7 @@ export default Service.extend(Evented, {
 
     let people = this;
 
-    people.set('ws', websocket);
+    people.ws = websocket;
 
     function onClose(/* evt */)
     {
@@ -41,7 +41,7 @@ export default Service.extend(Evented, {
         //   break;
         case 'move':
           // if (person) {
-            person.set('params', data.data);
+            person.params = data.data;
           // }
           break;
         // case 'route':
@@ -107,13 +107,13 @@ export default Service.extend(Evented, {
         let { ws } = this;
         if (ws) {
           ws.close();
-          this.set('ws', null);
+          this.ws = null;
         }
         this.updateRouteTask.cancelAll();
-        this.set('myRoute', null);
+        this.myRoute = null;
         return;
       }
-      this.set('myRoute', route);
+      this.myRoute = route;
     } else {
       route = this.myRoute;
       if (!route) {
