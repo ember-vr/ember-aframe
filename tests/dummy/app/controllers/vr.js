@@ -1,4 +1,5 @@
 import Controller from '@ember/controller';
+// eslint-disable-next-line ember/no-mixins
 import QueryParamsControllerMixin from 'ember-aframe-camera-extras/mixins/query-params-controller';
 import { inject as injectService } from '@ember/service';
 import { readOnly } from '@ember/object/computed';
