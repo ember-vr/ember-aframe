@@ -1,9 +1,9 @@
-/* eslint-disable ember/no-new-mixins */
 import Mixin from '@ember/object/mixin';
 import { set } from '@ember/object';
 import AFrame from 'aframe';
 import { task, timeout } from 'ember-concurrency';
 
+// eslint-disable-next-line ember/no-new-mixins
 export default Mixin.create({
   // _checkAttributes: task(function * () {
   //   let attributes = this.attributesToObserve;
