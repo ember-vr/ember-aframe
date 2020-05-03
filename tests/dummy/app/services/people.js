@@ -28,7 +28,7 @@ export default Service.extend(Evented, {
     {
       // websocket.close();
       let data = JSON.parse(evt.data);
-      let id = data.id;
+      let { id } = data;
       let { otherPeople } = people;
       let person = otherPeople.findBy('id', id);
       switch (data.type) {
