@@ -4,7 +4,6 @@ import { inject as injectService } from '@ember/service';
 import { readOnly } from '@ember/object/computed';
 import { on } from '@ember/object/evented';
 import { observer } from '@ember/object'; // eslint-disable-line ember/no-observers
-import { get } from '@ember/object';
 import { eq, raw } from 'ember-awesome-macros';
 
 // from https://github.com/aframevr/aframe/blob/master/src/constants/index.js#L3
@@ -28,20 +27,20 @@ export default Controller.extend(QueryParamsControllerMixin, {
   otherPeople: readOnly('people.otherPeople'),
 
   updateRoute: on('init', observer('currentRouteName', function() { // eslint-disable-line ember/no-observers
-    let currentRouteName = get(this, 'currentRouteName');
+    let { currentRouteName } = this;
     if (!currentRouteName) {
       return;
     }
 
     if (this._multiplayer) {
-      get(this, 'people').updateRoute(currentRouteName);
+      this.people.updateRoute(currentRouteName);
     }
   })),
 
   actions: {
     sendData(params) {
       if (this._multiplayer) {
-        get(this, 'people').updateLocation(params);
+        this.people.updateLocation(params);
       }
     }
   }

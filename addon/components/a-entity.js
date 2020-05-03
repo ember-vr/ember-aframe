@@ -1,5 +1,4 @@
 import Component from '@ember/component';
-// import { get } from '@ember/object';
 // import { scheduleOnce } from '@ember/runloop';
 // import { addObserver, removeObserver } from '@ember/object/observers';
 import { task, waitForEvent } from 'ember-concurrency';
@@ -31,7 +30,7 @@ export default Component.extend({
   }).on('didInsertElement'),
 
   // _toggleObservers(func) {
-  //   get(this, 'attributeBindings').forEach(attribute => {
+  //   this.attributeBindings.forEach(attribute => {
   //     func(this, attribute.substr(0, attribute.indexOf(':')), this, playAfterChange);
   //   });
   // },

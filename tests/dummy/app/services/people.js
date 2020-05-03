@@ -29,7 +29,7 @@ export default Service.extend(Evented, {
       // websocket.close();
       let data = JSON.parse(evt.data);
       let id = data.id;
-      let otherPeople = people.get('otherPeople');
+      let { otherPeople } = people;
       let person = otherPeople.findBy('id', id);
       switch (data.type) {
         // case 'id':
@@ -45,7 +45,7 @@ export default Service.extend(Evented, {
           // }
           break;
         // case 'route':
-        //   if (data.data !== people.get('myRoute')) {
+        //   if (data.data !== people.myRoute) {
         //     // you clear out others when you switch routes for instant effect
         //     // then the propagation hits later so ignore it
         //     // if (person) {
@@ -88,7 +88,7 @@ export default Service.extend(Evented, {
           //   type: 'connected'
           // }));
           // people.updateRoute();
-          people.get('updateRouteTask').perform();
+          people.updateRouteTask.perform();
           resolve(websocket);
         }
     });
@@ -102,20 +102,20 @@ export default Service.extend(Evented, {
   },
   updateRoute(route) {
     if (route) {
-      this.get('otherPeople').clear();
+      this.otherPeople.clear();
       if (route.indexOf('vr.') !== 0) {
-        let ws = this.get('ws');
+        let { ws } = this;
         if (ws) {
           ws.close();
           this.set('ws', null);
         }
-        this.get('updateRouteTask').cancelAll();
+        this.updateRouteTask.cancelAll();
         this.set('myRoute', null);
         return;
       }
       this.set('myRoute', route);
     } else {
-      route = this.get('myRoute');
+      route = this.myRoute;
       if (!route) {
         // websocket connected before the first route
         return;
@@ -129,7 +129,7 @@ export default Service.extend(Evented, {
 
   send(json) {
     let promise;
-    let ws = this.get('ws');
+    let { ws } = this;
     if (!ws) {
       promise = this.setUpSocket();
     } else {
@@ -149,6 +149,6 @@ export default Service.extend(Evented, {
     // send your current route every once in a while
     this.updateRoute();
 
-    this.get('updateRouteTask').perform();
+    this.updateRouteTask.perform();
   })
 });

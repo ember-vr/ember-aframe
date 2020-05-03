@@ -2,7 +2,6 @@
 
 import Component from '@ember/component';
 import EmberObject from '@ember/object';
-import { get } from '@ember/object';
 import { defaultComponents } from 'ember-aframe/utils/components';
 import { defaultAttributes } from 'ember-aframe/utils/attributes';
 
@@ -18,10 +17,9 @@ export default Component.extend({
 
     this.set('components', componentModules.map(componentModule => {
       let componentDefinition = requirejs(componentModule).default;
-      let component = componentDefinition.create({
+      let { attributeBindings } = componentDefinition.create({
         renderer: {}
       });
-      let attributeBindings = get(component, 'attributeBindings');
       let nonDefaultAttributeBindings = attributeBindings.filter(attribute => {
         return !defaultComponents.includes(attribute) && !defaultAttributes.includes(attribute);
       });
