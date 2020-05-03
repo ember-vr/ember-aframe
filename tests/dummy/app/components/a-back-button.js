@@ -136,7 +136,7 @@ export default AEntity.extend(
 
   // actions: {
   //   hover(position) {
-  //     this.get('hover').perform(position);
+  //     this.hover.perform(position);
   //   }
   // }
 }).reopenClass({

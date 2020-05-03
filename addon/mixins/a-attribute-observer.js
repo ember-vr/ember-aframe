@@ -6,7 +6,7 @@ import { task, timeout } from 'ember-concurrency';
 
 export default Mixin.create({
   // _checkAttributes: task(function * () {
-  //   let attributes = this.get('attributesToObserve');
+  //   let attributes = this.attributesToObserve;
   //   let observer;
 
   //   try {
@@ -31,11 +31,11 @@ export default Mixin.create({
   // }).on('didInsertElement'),
 
   _iterateAttributes() {
-    let triggeredList = this.get('_triggeredList');
+    let triggeredList = this._triggeredList;
     if (triggeredList === undefined) {
       triggeredList = this.set('_triggeredList', []);
     }
-    let attributes = this.get('attributesToObserve');
+    let attributes = this.attributesToObserve;
     let isDone = true;
     Object.keys(attributes).forEach(attribute => {
       if (triggeredList.includes(attribute)) {
@@ -76,6 +76,6 @@ export default Mixin.create({
 
     yield timeout(1);
 
-    this.get('_checkAttributes').perform();
+    this._checkAttributes.perform();
   }).on('didInsertElement')
 });
