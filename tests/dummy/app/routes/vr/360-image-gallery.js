@@ -3,6 +3,7 @@ import { scheduleOnce } from '@ember/runloop';
 
 export default Route.extend({
   _updateSrc(src) {
+    // eslint-disable-next-line ember/no-controller-access-in-routes
     this.controller.set('skySrc', src);
   },
 
