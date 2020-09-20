@@ -40,7 +40,7 @@
     "@ember/optional-features": "^2.0.0",
     "@glimmer/component": "^1.0.1",
     "@glimmer/tracking": "^1.0.1",
-    "@kellyselden/ember-blueprint": "1.2.0",
+    "@kellyselden/ember-blueprint": "2.0.0",
     "aframe-event-set-component": "^5.0.0",
     "aframe-layout-component": "^5.3.0",
     "babel-eslint": "^10.1.0",
