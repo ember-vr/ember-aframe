@@ -62,7 +62,7 @@
     "ember-resolver": "^8.0.2",
     "ember-source": "~3.21.1",
     "ember-source-channel-url": "^3.0.0",
-    "ember-template-lint": "^2.11.0",
+    "ember-template-lint": "^3.0.0",
     "ember-test-selectors": "^5.0.0",
     "ember-transition-helper": "1.0.0",
     "ember-try": "^1.4.0",
