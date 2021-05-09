@@ -56,7 +56,7 @@
       cameraMoveSlow=(hash interval=1000 adjustHeight=true)
       cameraMoveFast=(hash interval=10)
     }}
-    @cameraMoveSlow={{action "updateCameraQueryParams"}}
-    @cameraMoveFast={{action "sendData"}}
+    @cameraMoveSlow={{fn this.actions.updateCameraQueryParams}}
+    @cameraMoveFast={{fn this.actions.sendData}}
   />
 </a-scene>
